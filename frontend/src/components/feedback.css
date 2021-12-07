@@ -1,0 +1,109 @@
+/*-----------Feedback----------*/
+
+.FeedbackPage {
+    margin: 0;
+    padding: 0;
+    font-family: "poppins", sans-serif;
+    box-sizing: border-box;
+  }
+  
+  .FeedbackForm {
+    width: 100%;
+    height: 90vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), #3551b5);
+    background-color: blueviolet;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .85em;
+    border-radius: 1.5em;
+  }
+  
+  .FormFilling {
+    margin-top: 25px;
+    width: 100%;
+    max-width: 450px;
+  }
+  
+  .txt_field {
+    margin-bottom: 30px;
+    position: relative;
+  }
+  
+  .txt_field input,
+  .txt_field textarea {
+    width: 100%;
+    padding: 10px;
+    outline: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    background: transparent;
+    font-size: 15px;
+  }
+  
+  .txt_field label {
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    color: rgba(255, 255, 255, 0.568);
+    cursor: text;
+    /* --for better interactivity */
+    pointer-events: none;
+    transition: 0.2s;
+  }
+  
+  .txt_field button {
+    padding: 10px;
+    color: #fff;
+    outline: none;
+    background: transparent;
+    border: 1px solid #fff;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .txt_field button:hover {
+    cursor: pointer;
+    background: black;
+    color: white;
+  }
+  
+  .txt_field input:focus ~ label,
+  .txt_field input:valid ~ label,
+  textarea:focus ~ label,
+  textarea:valid ~ label {
+    color: white;
+    top: -35px;
+    font-size: 14px;
+  }
+  
+  .Personal {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .Personal .txt_area {
+    flex-basis: 60%;
+  }
+  .after-resp {
+    position: absolute;
+    padding: 2.2em 1.5em;
+    background-color: #000000a8;
+    top: 20%;
+    left: 7%;
+    border: 1px solid rgb(46, 45, 45);
+    box-shadow: 0px 1px 3px 3px rgba(26, 26, 26, 0.438);
+    border-radius: .5em;
+    text-align: center;
+}
+#submitted-icon{
+    margin-top:20px;
+    font-size: 7vh;
+    fill:rgb(0, 252, 84);
+    
+}

@@ -1,0 +1,94 @@
+/*-----------Login----------*/
+
+.LoginPage {
+    margin: 0;
+    padding: 0;
+    background: url("https://picsum.photos/id/10/2500/1667");
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+    overflow: hidden;
+  }
+  
+  .LoginForm {
+    width: 320px;
+    height: 500px;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    border-radius: 1em;
+    position: absolute;
+    transform: translate(180%, -50%);
+    box-sizing: border-box;
+    box-shadow: 10px 10px 10px 10px royalblue;
+    padding: 70px 30px;
+  }
+  
+  .LoginForm h1 {
+    margin: 10px;
+    padding: 0 0 25px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .LoginForm p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .LoginForm input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .LoginForm input[type="text"],
+  input[type="password"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .LoginForm input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: black;
+    color: whitesmoke;
+    border: 2px solid blueviolet;
+    font-size: 18px;
+    border-radius: 20px;
+  }
+  
+  .LoginForm input[type="submit"]:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #721cd5, #dd00f3);
+    border:none;
+    color: whitesmoke;
+  }
+  
+  .LoginForm a {
+    text-decoration: none;
+    font-size: 12px;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .LoginForm a:hover {
+    color: #17ee9d;
+  }
+  
+  /* ---------- ----------*/
+  .loginm{
+      left: 15% !important;
+      top:50% !important;
+  }
+  .loginm .btn {
+    top: -5px;
+    left: 141%;
+}

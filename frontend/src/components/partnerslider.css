@@ -1,0 +1,36 @@
+.our-partners{
+    width: 85%;
+    margin: auto;
+    height: 50vh;
+  }
+  .img-circle img {
+    width:128px;
+    height: 128px;
+    transform: scale(1);
+    text-align: center;
+    border: 5px solid;
+    border-radius: 50%;
+    display: inline-block;
+  }
+  .slick-list{
+      margin-top: 4rem;
+      z-index: 0;
+  }
+.slick-track {
+      margin-left: 5em;
+}
+.slick-dots{
+  bottom: -35px;
+}
+.slider-title{
+  font-family: Poppins;
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 500;
+}
+
+.comp-name{
+  color: whitesmoke;
+  opacity: .5;
+  margin: 1em .5em;
+}

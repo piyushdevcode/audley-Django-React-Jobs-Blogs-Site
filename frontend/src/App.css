@@ -1,0 +1,198 @@
+body,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+}
+.App {
+  background-color: #101042;
+}
+
+/* ----------BG CIRCLES-------- */
+
+#Mask_Group_3 {
+  mix-blend-mode: overlay;
+  opacity: 0.3;
+}
+/* ------- Every Element Created ------*/
+
+* {
+  color: whitesmoke;
+  box-sizing: border-box;
+  font-family: Chivo;
+}
+
+/*-------------------- NAVBAR----------------- */
+
+
+
+/*--------------------BACKGROUND---------*/
+
+.bg {
+  margin-top:-7.2em;
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* -----To Center an item------*/
+
+.center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/*-------Scrollbar -------  */
+
+body::-webkit-scrollbar
+{
+  width: 17px;
+  background-color: rgb(34, 29, 29);
+}
+body::-webkit-scrollbar-track
+{
+	border-radius: 15px;
+	-webkit-box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+	box-shadow: inset 0 0 4px rgba(240, 241, 238, 0.376);
+	background-color: #080808;
+}
+
+
+body::-webkit-scrollbar-thumb
+{
+  border-radius: 10px;
+	-webkit-box-shadow: inset 1px 1px 20px 2px rgb(16 16 66);
+	box-shadow: inset 1px 1px 20px 2px rgb(16 16 66);
+  background-color: rgb(94 92 92);
+}
+
+/* ----- Chevrons ---- */
+.chevron {
+  display:block;
+  width:10px;
+  height:10px;
+  border-right: 2px solid whitesmoke;
+  border-top: 2px solid whitesmoke;
+  transform: rotate(135deg);
+  transition: .5s ease-in-out;
+}
+.downarrow{
+  margin-top: 1rem;
+}
+.chevron:nth-child(2):hover{
+  transform: rotate(-225deg) scale(2) translate(25%,-25%);
+}
+/* -------- For individual pages ----- */
+
+.pageBox {
+  /* overflow-x: hidden; */
+  position: relative;
+  font-size: 3vh;
+}
+
+/* --------- Company Name & Tagline -------------- */
+.c-info{
+  /* height:400px; */
+  /* width:50%; */
+  margin:auto;
+  text-align:center;
+  padding: 6em 6em 0;
+
+}
+.cname {
+  font-family: poppins;
+  font-weight: 700;
+  font-size: 2.25em;
+  color: whitesmoke;
+}
+.tline {
+  font-size: 1.5em;
+  opacity: 0.5;
+}
+
+/* ------Temporary ----- */
+
+.test {
+  box-shadow: inset 0px 0px 0px 5px white;
+}
+
+/* ----- Page2 ------ */
+.p2 {
+  /* transform: translate(0, -25%); */
+}
+
+/* ------- Page3 ------*/
+.p3 {
+  /* transform: translate(0, -30%); */
+  height: fit-content;
+}
+
+/* ------- Page4 ------*/
+.p4 {
+  height: 100%;
+  position: relative;
+}
+
+/* ------- Services Component ------*/
+
+.services {
+  background: linear-gradient(
+    180deg,
+    rgb(255 255 255 / 8%) 1%,
+    rgb(36 36 36 / 8%) 100%
+  );
+  padding: 0.85rem 1.25rem;
+  line-height: 1rem;
+  margin: 2rem;
+  margin-left: 0;
+  min-width: 15vw;
+  width: 40%;
+  text-align: center;
+  border-radius: 0.5em;
+  box-shadow: 3px -5px 15px 0.5px #08080878;
+}
+.all-services {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 1rem;
+  column-gap: 2.6rem;
+  justify-content: center;
+}
+.service-icon {
+  margin: 1.75rem 0 1rem;
+  width: clamp(1vw,5vw,11vw);
+  height: auto;
+}
+.service-title {
+  font-size: 1.4vw;
+}
+.service-subtitle {
+  opacity: 0.5;
+  font-size: 0.9vw;
+}
+
+/* ------- Content Block ------*/
+
+.content-block .heading{
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 1.35em;
+  text-align: center;
+}
+.info-block {
+  font-family: Chivo;
+  font-size: 1em;
+  text-align: justify;
+  line-height: 2.3rem;
+  padding: 2em 8em 4em;
+  border-radius: 0.5em;
+  box-shadow: 3px -5px 15px 0.5px #08080878;
+  margin: 3.5em auto;
+  width: 70%;
+  border-top-right-radius: 8rem;
+  border-bottom-left-radius: 8rem;
+}
+
+
+
+
