@@ -10,13 +10,15 @@ STATUS = (
 class Post(models.Model):
     # title of blog 
     title = models.CharField(max_length=200, unique=True)
-    # few lines to show
-    slug = models.SlugField(max_length=200, unique=True)
     
     author = models.ForeignKey(User, on_delete= models.CASCADE,related_name='posts')
+    # to generate URL for post
+    slug = models.SlugField(max_length=200, unique=True)
+
+    content = models.TextField()
+    
     # if any changes made then when 
     updated_on = models.DateTimeField(auto_now= True)
-    content = models.TextField()
     created_on = models.DateTimeField(auto_now_add=True)
     # Published or not 
     # Unpublished or posts still in draft state should not be rendered
