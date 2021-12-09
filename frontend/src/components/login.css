@@ -20,7 +20,7 @@
     position: absolute;
     transform: translate(180%, -50%);
     box-sizing: border-box;
-    box-shadow: 10px 10px 10px 10px royalblue;
+    box-shadow: 1px 0px 5px 4px rgba(137, 43, 226, 0.705);
     padding: 70px 30px;
   }
   
@@ -74,12 +74,13 @@
   
   .LoginForm a {
     text-decoration: none;
-    font-size: 12px;
+    font-size: .6em;
     line-height: 20px;
     color: darkgrey;
   }
   
   .LoginForm a:hover {
+    font-size: .65em;
     color: #17ee9d;
   }
   
@@ -90,5 +91,5 @@
   }
   .loginm .btn {
     top: -5px;
-    left: 141%;
+    left: 143%;
 }

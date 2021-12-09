@@ -3,10 +3,9 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import Blogs from "./BlogsMain";
+import BlogIndiv from "./BlogIndividual";
 import  Navbar  from "./components/navbar";
 import reportWebVitals from "./reportWebVitals";
-import Feedback from "./components/Feedback";
-import Login from "./components/Login";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route , BrowserRouter as Router,Routes} from 'react-router-dom';
 
@@ -18,6 +17,7 @@ ReactDOM.render(
       <Routes>
       <Route path="/" element ={<App/>} />
       <Route path ="/blogs"element = {<Blogs/>} />
+      <Route path = "/blogs/:id" element={<BlogIndiv/>}/>
       </Routes>
     </Router>
     // <App/>

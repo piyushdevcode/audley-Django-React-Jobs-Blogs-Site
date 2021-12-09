@@ -1,0 +1,70 @@
+
+.blog-main .blog-sth {
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows:350px ;
+    display: grid;
+    padding: 2.5em;
+    grid-gap: 25px 15px;
+    margin: 1em;
+    width: 99%;
+    margin:auto;
+}
+.blog-main{
+    font-size:3.5vh;
+}
+.blog-image{
+    max-width: 700px;
+    overflow: hidden;
+    border-radius: .5em;
+}
+.blog-image img{
+    width: 100%;
+    object-fit: contain;
+}
+.blog-title{
+    font-family: Kalam;
+    font-size: 3.5em;
+    text-shadow: 2px 2px 1px blueviolet;
+    line-height: 7vw;
+}
+.blog-main .blog-details {
+    min-width: 80%;
+    padding:2em;
+    background: linear-gradient(180deg,rgba(236, 231, 231, 0.171), rgba(245, 242, 242, 0.096));
+    box-shadow: inset -2px -2px 2px 2px   blueviolet, 2px 2px 2px 2px purple inset, 2px 3px 3px 5px rgba(19, 18, 18, 0.315);
+    border-radius: 1rem;
+    align-self: center;
+    justify-self: center;
+}
+.blog-author{
+    font-size: .825em;
+    font-weight: 300;
+    margin: -.5em 0 .1em;
+    opacity: .7;
+    text-transform: capitalize;
+    letter-spacing: .15em;
+}
+.blog-date{
+    letter-spacing: .35em;
+    opacity: .5;
+    font-size: .75em;
+}
+.blog-content{
+    font-weight: 400;
+    padding:3em 6em;
+    font-size: .85em;
+    grid-column: 3/1;
+    border:2px solid whitesmoke;
+    border-radius: 1.95em;
+    box-shadow: inset 1px 1px 9px 8px rgba(0, 0, 0, 0.445);
+    background-color: rgba(0, 0, 0, 0.534);
+    color:whitesmoke;
+    box-shadow: inset -2px -2px 2px 2px   blueviolet, 2px 2px 2px 2px purple inset, 2px 3px 3px 5px rgba(19, 18, 18, 0.315);
+}
+.fake-hr{
+    margin-top: 1em;
+    border:2px solid blueviolet;
+    border-radius: 3.5px;
+    background-color: blueviolet;
+    opacity: 1;
+}

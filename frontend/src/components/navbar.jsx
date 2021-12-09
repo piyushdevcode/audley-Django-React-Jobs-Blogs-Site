@@ -2,8 +2,9 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import {Link} from 'react-router-dom';
+import {HashLink as Link} from 'react-router-hash-link';
 import "./navbar.css"
+
 const Navbar = () => {
   document.title = "Audley";
   return (
@@ -13,13 +14,13 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </div>
       <div className="navbar_item">
-        <a href="#about">About</a>
+        <Link smooth to="/#about"> About</Link>
       </div>
       <div className="navbar_item">
-        <a href="#services">Services</a>
+        <Link smooth to="/#services">Services</Link>
       </div>
       <div className="navbar_item">
-        <Link  to="/blogs">Blog</Link>
+        <Link smooth to="/blogs">Blog</Link>
       </div>
       <div className="navbar_item">Contact</div>
 
@@ -29,13 +30,15 @@ const Navbar = () => {
         Follow Us
         <div className="follow_handles">
           <div className="follow_item">
-            <InstagramIcon id="follow-icons" /><a href="www.instagram.com"> Instagram
+            <InstagramIcon className="follow-icons" /><a target="blank" href="https://www.instagram.com"> Instagram
           </a></div>
           <div className="follow_item">
-            <FacebookIcon id="follow-icons" /> Facebook
+            <FacebookIcon className="follow-icons" /> <a target="blank" href="https://www.facebook.com"> Facebook
+          </a>
           </div>
           <div className="follow_item">
-            <LinkedInIcon id="follow-icons" /> LinkedIn
+            <LinkedInIcon className="follow-icons" /> <a target="blank" href="https://www.linkedin.com"> LinkedIn
+          </a>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import Navbar from "./components/navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./Blog.css";
@@ -13,6 +12,7 @@ import {
 import axios from "axios";
 import { Component } from "react";
 import { API_URL } from "./constants/index";
+import {Link} from 'react-router-dom';
 
 class Blogs extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class Blogs extends Component {
   componentDidMount() {
     let data;
     axios
-      .get("http://127.0.0.1:8000/?format=json")
+      .get(`${API_URL}/posts/`)
       .then((res) => {
         console.log("success");
         data = res.data;
@@ -33,31 +33,37 @@ class Blogs extends Component {
           details: data,
         });
       })
-      .catch((err) => {console.log(err)});
+      .catch((err) => {
+        console.log(API_URL,"Failed to retrieve", err.response);
+      });
   }
   render() {
+    const bg_url = 'https://picsum.photos/1000/?random=';
     return (
       <>
         <div>
-          {this.state.details.map((details, id) => (
-            <div key={id}>
-              <Card className="w-75 m-5 .bg-info">
+          {console.log("--reqq--",this.state.details)}
+          {this.state.details.map((details) => (
+            <div key={details.id}>
+              <Card className="w-75 m-5 .bg-info" >
+              <div className="blogs-bg-img"style ={{backgroundImage: `url(${bg_url}${details.id})` }}/>
                 <CardBody className=".bg-info">
-                  <CardTitle tag="h5">{details.title}</CardTitle>
+                  <CardTitle tag="h3">{details.title}</CardTitle>
+                  <hr></hr>
                   <CardSubtitle className="mb-2 opacity-75" tag="h6">
                     Author: {details.author} | Created at:{" "}
                     {details.created_on.slice(0, 10)}
                   </CardSubtitle>
                   <CardText>
                     {details.content.slice(0, this.state.maxlength)}{" "}
-                    <span>
-                        <span className="ellipse"> </span>
-                        <span className="ellipse"> </span>
-                        <span className="ellipse"> </span>
-                        </span>
+                    <span className="rm-dots">
+                      <span className="ellipse"> </span>
+                      <span className="ellipse"> </span>
+                      <span className="ellipse"> </span>
+                    </span>
                   </CardText>
                   <Button>
-                    Read more<a href=""></a>
+                    <Link to={`${details.id}`}>Read more</Link>
                   </Button>
                 </CardBody>
               </Card>

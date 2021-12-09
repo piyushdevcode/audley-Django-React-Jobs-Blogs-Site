@@ -18,7 +18,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['author','title','url','slug','created_on','content','status']
+        fields = ['id','author','title','url','slug','created_on','content','status']
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     posts = serializers.HyperlinkedRelatedField(many=True, read_only=True,view_name='post-detail')

@@ -143,4 +143,8 @@ export default class Feedback extends Component {
   componentDidMount() {
     document.title = "Feedback";
   }
+  componentWillUnmount(){
+    
+    document.title = "Audley";
+  }
 }

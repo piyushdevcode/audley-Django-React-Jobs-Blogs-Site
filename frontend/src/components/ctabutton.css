@@ -80,6 +80,7 @@ body.active-modal {
 .modal-content .btn:hover{
   transform: scale(1.2);
   color: whitesmoke;
+  width: fit-content;
 }
 
 button.btn.close-modal:hover::after {
