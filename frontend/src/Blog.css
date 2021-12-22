@@ -56,7 +56,7 @@ body{
 hr{
     border: 1px solid;
 }
-a,a:hover{
+.btn a,.btn a:hover{
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;

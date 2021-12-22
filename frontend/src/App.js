@@ -7,7 +7,8 @@ import { ReactComponent as Bulbicon } from "./img/bulbIcon.svg";
 import Services from "./components/services";
 import OurPartners from "./components/Partners";
 import CtaButtons from "./components/ctabutton";
-
+import ContactUs from "./components/ContactUs";
+import { HashLink as Link } from "react-router-hash-link";
 function App() {
   return (
     <div className="App">
@@ -26,10 +27,12 @@ function App() {
           <div id="about" className="heading">
             <p align="center">
               ABOUT US
-              <div className="downarrow">
+              <Link to="/#about">
+                <span className="downarrow">
                 <span className="chevron"></span>
                 <span className="chevron"></span>
-              </div>
+              </span>
+                </Link>
               </p> 
               
           </div>
@@ -46,8 +49,8 @@ function App() {
       </div>
 
       <div className="pageBox p3">
-        <div className="content-block">
-          <p id="services" className="heading" align="center">
+        <div id="services" className="content-block">
+          <p className="heading" align="center">
             OUR SERVICES
           </p>
           <div className="info-block">
@@ -83,8 +86,12 @@ function App() {
           </div>
         </div>
       </div>
-      <div className="pagebox p4">
+      <div className="pageBox p4">
         <OurPartners />
+        </div>
+        <div className="pageBox p5">
+
+        <ContactUs/>
       </div>
     </div>
   );

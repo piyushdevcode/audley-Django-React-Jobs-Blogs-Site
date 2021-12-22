@@ -73,14 +73,25 @@ body::-webkit-scrollbar-thumb
   height:10px;
   border-right: 2px solid whitesmoke;
   border-top: 2px solid whitesmoke;
+  border-radius: 1px;
   transform: rotate(135deg);
-  transition: .5s ease-in-out;
 }
 .downarrow{
   margin-top: 1rem;
+  display: block;
 }
-.chevron:nth-child(2):hover{
-  transform: rotate(-225deg) scale(2) translate(25%,-25%);
+.chevron:nth-child(2){
+  animation: chev infinite 2s ease-in-out alternate;
+  
+}
+@keyframes chev {
+  0%{
+    transform: rotate(135deg);
+  }
+  100%{
+    /* transform: rotate(-225deg) scale(2) translate(25%,-25%); */
+    transform: scale(2) rotate(135deg);
+    }
 }
 /* -------- For individual pages ----- */
 
@@ -89,6 +100,7 @@ body::-webkit-scrollbar-thumb
   color:whitesmoke;
   position: relative;
   font-size: 3vh;
+  /* min-height: 100vh; */
 }
 
 /* --------- Company Name & Tagline -------------- */
@@ -118,20 +130,23 @@ body::-webkit-scrollbar-thumb
 }
 
 /* ----- Page2 ------ */
-.p2 {
-  /* transform: translate(0, -25%); */
+.p1,.p3 {
+  min-height: fit-content;
 }
 
 /* ------- Page3 ------*/
 .p3 {
   /* transform: translate(0, -30%); */
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 /* ------- Page4 ------*/
 .p4 {
   height: 100%;
   position: relative;
+}
+.p5 .content-block{
+  margin-bottom: 0;
 }
 
 /* ------- Services Component ------*/
@@ -175,6 +190,7 @@ body::-webkit-scrollbar-thumb
 /* ------- Content Block ------*/
 
 .content-block .heading{
+  text-transform: uppercase;
   font-family: Poppins;
   font-weight: 500;
   font-size: 1.35em;
@@ -188,10 +204,13 @@ body::-webkit-scrollbar-thumb
   padding: 2em 8em 4em;
   border-radius: 0.5em;
   box-shadow: 3px -5px 15px 0.5px #08080878;
-  margin: 3.5em auto;
+  margin: 3.5em auto 0;
   width: 70%;
   border-top-right-radius: 8rem;
   border-bottom-left-radius: 8rem;
+}
+.content-block{
+  margin-bottom: 3.5em;
 }
 
 

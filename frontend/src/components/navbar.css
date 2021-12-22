@@ -10,11 +10,6 @@
     font-size: calc(0.8em + .5vh);
     /* box-shadow: inset 0px -5px 12px 3px #108cf9; */
   }
-  .follow-icons {
-    font-size: medium;
-    margin-right: 0.2rem;
-    color: whitesmoke;
-  }
   
   .navbar_title {
     margin-right: auto;
@@ -27,10 +22,12 @@
     cursor: pointer;
     vertical-align: middle;
   }
-  .navbar_item:hover,
-  .follow_item:hover,
-  .navbar a:hover {
+  a:hover,.navbar *:hover {
     color: #17ee9d;
+    transition: 350ms ease-in-out;
+    cursor: pointer;
+    opacity: 1;
+    font-weight: normal;
   }
   .followbtn {
     position: relative;

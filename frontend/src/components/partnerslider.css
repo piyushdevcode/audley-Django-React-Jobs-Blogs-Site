@@ -1,36 +1,36 @@
-.our-partners{
-    width: 85%;
-    margin: auto;
-    height: 50vh;
-  }
-  .img-circle img {
-    width:128px;
-    height: 128px;
-    transform: scale(1);
-    text-align: center;
-    border: 5px solid;
-    border-radius: 50%;
-    display: inline-block;
-  }
-  .slick-list{
-      margin-top: 4rem;
-      z-index: 0;
-  }
+.our-partners {
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+  height: 65vh;
+}
+.img-circle img {
+  width: 10vw;
+  height: 10vw;
+  background-color: whitesmoke;
+  border: 0.4rem solid;
+  border-radius: 50%;
+}
+.slick-list {
+  margin-top: 5rem;
+  z-index: 0;
+}
 .slick-track {
-      margin-left: 5em;
+  margin-left: 3.2em;
 }
-.slick-dots{
-  bottom: -35px;
+.slick-dots {
+  bottom: -85px;
 }
-.slider-title{
-  font-family: Poppins;
-  font-size: 1.6rem;
-  text-align: center;
-  font-weight: 500;
+.slick-dots li.slick-active button:before {
+  color: whitesmoke;
 }
 
-.comp-name{
+.comp-name {
   color: whitesmoke;
-  opacity: .5;
-  margin: 1em .5em;
+  opacity: 0.5;
+  margin: 1em 0;
+}
+.slick-dots li button:before {
+  font-size: 9px;
+  opacity: 0.5;
 }

@@ -22,7 +22,7 @@ const Navbar = () => {
       <div className="navbar_item">
         <Link smooth to="/blogs">Blog</Link>
       </div>
-      <div className="navbar_item">Contact</div>
+      <div className="navbar_item"><Link smooth to="/#contact">Contact</Link></div>
 
       {/*In PROGRESS FOLLOW BUTTON*/}
 
@@ -30,14 +30,14 @@ const Navbar = () => {
         Follow Us
         <div className="follow_handles">
           <div className="follow_item">
-            <InstagramIcon className="follow-icons" /><a target="blank" href="https://www.instagram.com"> Instagram
+            <a target="blank" href="https://www.instagram.com"className="follow-links"><InstagramIcon/> Instagram
           </a></div>
           <div className="follow_item">
-            <FacebookIcon className="follow-icons" /> <a target="blank" href="https://www.facebook.com"> Facebook
+            <a target="blank" href="https://www.facebook.com"className="follow-links"> <FacebookIcon/> Facebook
           </a>
           </div>
           <div className="follow_item">
-            <LinkedInIcon className="follow-icons" /> <a target="blank" href="https://www.linkedin.com"> LinkedIn
+            <a target="blank" href="https://www.linkedin.com" className="follow-links"><LinkedInIcon/> LinkedIn
           </a>
           </div>
         </div>

@@ -5,6 +5,7 @@ import App from "./App";
 import Blogs from "./BlogsMain";
 import BlogIndiv from "./BlogIndividual";
 import  Navbar  from "./components/navbar";
+import Footer from "./components/Footer"
 import reportWebVitals from "./reportWebVitals";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route , BrowserRouter as Router,Routes} from 'react-router-dom';
@@ -19,6 +20,7 @@ ReactDOM.render(
       <Route path ="/blogs"element = {<Blogs/>} />
       <Route path = "/blogs/:id" element={<BlogIndiv/>}/>
       </Routes>
+      <Footer/>
     </Router>
     // <App/>
   // </React.StrictMode>
