@@ -3,22 +3,21 @@
 .LoginPage {
     margin: 0;
     padding: 0;
-    background: url("https://picsum.photos/id/10/2500/1667");
+    /* background: url("https://picsum.photos/id/10/2500/1667"); */
     background-size: cover;
     background-position: center;
     font-family: sans-serif;
-    overflow: hidden;
   }
   
   .LoginForm {
-    width: 320px;
     height: 500px;
+    width: 55%;
+    margin: auto;
     background: #000;
     color: #fff;
     top: 50%;
     border-radius: 1em;
-    position: absolute;
-    transform: translate(180%, -50%);
+    /* transform: translate(180%, -50%); */
     box-sizing: border-box;
     box-shadow: 1px 0px 5px 4px rgba(137, 43, 226, 0.705);
     padding: 70px 30px;
@@ -85,11 +84,11 @@
   }
   
   /* ---------- ----------*/
-  .loginm{
-      left: 15% !important;
-      top:50% !important;
+  .loginmodal{
+      /* left: 15% !important; */
+      /* top:50% !important; */
   }
-  .loginm .btn {
-    top: -5px;
-    left: 143%;
+  .loginmodal .btn {
+    top: 5px;
+    left: 70%;
 }

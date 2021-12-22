@@ -44,7 +44,7 @@ export default function CtaButtons() {
     {modal2 &&(
       <div className="modal">
       <div className="overlay"></div>
-      <div className="loginm modal-content">
+      <div className="loginmodal modal-content">
           <Login/>
         <button
         className="btn close-modal"

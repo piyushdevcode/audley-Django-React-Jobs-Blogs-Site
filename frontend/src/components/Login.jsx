@@ -8,23 +8,38 @@ export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email:"",
+      username:"",
       password:"",
+      isAuthorized: false,
+      errors: {},
     };
+    // to show without arrow function 
     this.handleOnChange= this.handleOnChange.bind(this);
   }
   handleLoginSubmit= (event)=>{
-    const {email,password} = this.state;
     event.preventDefault();
-    console.log(email," - ",password);
-    // axios.post(`${API_URL}/user/login/`).then(()={}).catch((err)=>{})
+    const {username,password} = this.state;
+    const payload = {username, password};
+
+    console.log(username," - ",password);
+
+    const onSuccess = ({data})=>{
+      // setClientToken(data.token);
+      this.setState({isAuthorized: true});
+      console.log(`Token : ${data.token}`);
+    }
+
+    const onFailure = error=>{
+      console.log(error && error.response);
+      this.setState({errors: error.response.data});
+    };
+    axios.post(`${API_URL}/user/login`,payload).then(onSuccess).catch(onFailure);
 
   }
   handleOnChange(event){
     this.setState({
       [event.target.name]: event.target.value,
     });
-    console.log('br');
   }
   render() {
     return (
@@ -33,10 +48,10 @@ export default class Login extends Component {
           <h1>LOGIN</h1>
           <form method="post" onSubmit={this.handleLoginSubmit}>
             <p>
-              Email ID
+              Username
               <PersonIcon fontSize="small" />
             </p>
-            <input name="email"type="text" placeholder="Enter Email ID" onChange={this.handleOnChange} required />
+            <input name="username"type="text" placeholder="Enter username" onChange={this.handleOnChange} required />
             <p>
               Password
               <LockIcon fontSize="small" />

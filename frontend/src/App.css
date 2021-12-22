@@ -157,7 +157,7 @@ body::-webkit-scrollbar-thumb
     rgb(255 255 255 / 8%) 1%,
     rgb(36 36 36 / 8%) 100%
   );
-  padding: 0.85rem 1.25rem;
+  padding: 0.85rem 1.25rem 1rem;
   line-height: 1rem;
   margin: 2rem;
   margin-left: 0;
