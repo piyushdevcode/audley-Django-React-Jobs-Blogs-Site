@@ -38,11 +38,11 @@ class Blogs extends Component {
       });
   }
   render() {
+    {console.log("--response--",this.state.details)}
     const bg_url = 'https://picsum.photos/1000/?random=';
     return (
       <>
-        <div>
-          {console.log("--reqq--",this.state.details)}
+        <div>   
           {this.state.details.map((details) => (
             <div key={details.id}>
               <Card className="w-75 m-5 .bg-info" >
@@ -51,8 +51,7 @@ class Blogs extends Component {
                   <CardTitle tag="h3">{details.title}</CardTitle>
                   <hr></hr>
                   <CardSubtitle className="mb-2 opacity-75" tag="h6">
-                    Author: {details.author} | Created at:{" "}
-                    {details.created_on.slice(0, 10)}
+                    Author: {details.author} | Created at:  {details.created_on.slice(0, 10)}
                   </CardSubtitle>
                   <CardText>
                     {details.content.slice(0, this.state.maxlength)}{" "}

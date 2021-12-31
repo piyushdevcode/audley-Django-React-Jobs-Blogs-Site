@@ -17,7 +17,7 @@ urlpatterns = format_suffix_patterns([
          views.UserDetail.as_view()),
 
     # ------- SIGN UP ,LOGIN & LOGOUT ----------
-    path('api/register/',
+    path('api/user/register/',
          views.RegisterAPI.as_view(),
          name='register'),
     path('api/user/login',
@@ -44,7 +44,7 @@ urlpatterns = format_suffix_patterns([
          views.FeedbackList.as_view(),
          name='feedback-list'),
     path('api/feedback/<int:pk>/',
-         views.FeedbackList.as_view(),
+         views.FeedbackDetail.as_view(),
          name='feedback-detail'),
 ])
 

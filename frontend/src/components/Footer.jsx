@@ -21,11 +21,11 @@ const Footer=()=>{
             </a></li>
         </ul>
         <ul className="menu">
-          <li className="menu__item"><Link className="menu__link"to="/#top">Home</Link></li>
-          <li className="menu__item"><Link className="menu__link"to="/#about">About</Link></li>
-          <li className="menu__item"><Link className="menu__link"to="/#services">Services</Link></li>
-          <li className="menu__item"><Link className="menu__link"to="/blogs">Blogs</Link></li>
-          <li className="menu__item"><Link className="menu__link"to="/#contact">Contact</Link></li>
+          <li className="menu__item"><Link className="menu__link" smooth to="/#top">Home</Link></li>
+          <li className="menu__item"><Link className="menu__link" smooth to="/#about">About</Link></li>
+          <li className="menu__item"><Link className="menu__link"smooth to="/#services">Services</Link></li>
+          <li className="menu__item"><Link className="menu__link"smooth to="/blogs">Blogs</Link></li>
+          <li className="menu__item"><Link className="menu__link"smooth to="/#contact">Contact</Link></li>
     
         </ul>
         <div className="copyright">

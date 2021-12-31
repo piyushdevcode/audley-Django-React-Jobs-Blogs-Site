@@ -23,9 +23,9 @@ export default function CtaButtons() {
     <>
     <div className="btn-grp">
       <button onClick={toggleModal2} className="btn">
-        Employee
+        Login/Register
       </button>
-      <button onClick={toggleModal} className="btn">Query ?</button>
+      <button onClick={toggleModal} className="btn">Talk With Us</button>
       </div>
       {/* CONDITIONAL RENDERING */}
       {modal &&( 
@@ -47,6 +47,7 @@ export default function CtaButtons() {
       <div className="loginmodal modal-content">
           <Login/>
         <button
+        id="modal-btn-cl"
         className="btn close-modal"
         onClick = {toggleModal2}
         > X </button>

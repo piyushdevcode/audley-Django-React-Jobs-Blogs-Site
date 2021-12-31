@@ -4,63 +4,117 @@ import LockIcon from "@material-ui/icons/Lock";
 import axios from 'axios';
 import {API_URL} from "../constants";
 import "./login.css"
+import CheckCircleOutlineIcon from "@material-ui/icons/CheckCircleOutline";
+
+function AfterSubmit(){
+  return(
+    <div className="response">
+      <div className="overlay"></div>
+        <div className="after-resp">
+          Registeration Successful
+            <div>
+              <CheckCircleOutlineIcon id="submitted-icon"/>
+              </div>
+        </div>
+  </div>
+
+  )
+}
 export default class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username:"",
       password:"",
+      email: "",
       isAuthorized: false,
       errors: {},
+      showLogin: true,
+      showErr: false,
     };
     // to show without arrow function 
     this.handleOnChange= this.handleOnChange.bind(this);
   }
-  handleLoginSubmit= (event)=>{
+  handleLoginRegSubmit= (event)=>{
+    
     event.preventDefault();
-    const {username,password} = this.state;
-    const payload = {username, password};
-
+    const {username,password,email} = this.state;
+    
     console.log(username," - ",password);
+    
+    if(this.state.showLogin){
+      const payload = {username, password};
 
-    const onSuccess = ({data})=>{
-      // setClientToken(data.token);
-      this.setState({isAuthorized: true});
-      console.log(`Token : ${data.token}`);
+      const onSuccess = ({data})=>{
+        // setClientToken(data.token);
+        this.setState({isAuthorized: true,showErr:false});
+        console.log(`Token : ${data.token}`);
+        document.forms['loginReg'].reset();
+        document.getElementById('modal-btn-cl').click()
+      }
+      
+      const onFailure = error=>{
+        console.log(error && error.response);
+        this.setState({errors: error.response.data, showErr: true});
+      };
+      
+      axios.post(`${API_URL}/user/login`,payload).then(onSuccess).catch(onFailure);
     }
+    else{
+      const payload = {username,email,password};
+      console.log("reg-payloaad",payload);
+      axios.post(`${API_URL}/user/register`,payload).then((res)=>{
+        
+        document.forms['loginReg'].reset();
+      }).catch((err)=>{
 
-    const onFailure = error=>{
-      console.log(error && error.response);
-      this.setState({errors: error.response.data});
-    };
-    axios.post(`${API_URL}/user/login`,payload).then(onSuccess).catch(onFailure);
-
+      })
+    }
   }
-  handleOnChange(event){
+    handleOnChange(event){
+      <AfterSubmit/>
     this.setState({
       [event.target.name]: event.target.value,
+      showErr: false,
     });
+  }
+  handleRegister = () =>{
+    document.forms['loginReg'].reset();
+    this.setState({
+      showLogin: !this.state.showLogin,
+    })
   }
   render() {
     return (
+      
       <div className="LoginPage">
         <div className="LoginForm ">
-          <h1>LOGIN</h1>
-          <form method="post" onSubmit={this.handleLoginSubmit}>
+          <h1>{this.state.showLogin ? "LOGIN" : "REGISTER"}</h1>
+          <form name="loginReg" method="post" onSubmit={this.handleLoginRegSubmit}>
             <p>
               Username
               <PersonIcon fontSize="small" />
             </p>
-            <input name="username"type="text" placeholder="Enter username" onChange={this.handleOnChange} required />
+            <input name="username"type="text" placeholder="Enter Username" onChange={this.handleOnChange} required />
+            {!this.state.showLogin  && <>
+            <p>
+              Email
+              <PersonIcon fontSize="small" />
+            </p>
+            <input name="email"type="email" placeholder="Enter Email" onChange={this.handleOnChange} required/>
+            </>
+            }
             <p>
               Password
               <LockIcon fontSize="small" />
             </p>
             <input name="password" type="password" placeholder="Enter Password" onChange={this.handleOnChange} autoComplete="on"  required/>
-            <input type="submit" value="Login" />
-            <a href="#">Lost your password?</a>
-            <br />
-            <a href="#">Don't have an account?</a>
+            {this.state.showErr && (<div className="errTooltip">Username/Password Invalid</div>)}
+            <input type="submit" value={this.state.showLogin? "LOGIN":"REGISTER"} />
+            {/* <a href="#">Lost your password?</a>
+            <br /> */}
+            <a href="#" onClick={this.handleRegister}> {this.state.showLogin ? "Don't have an account?" : "Login"} </a>
+            <AfterSubmit/>
           </form>
         </div>
       </div>

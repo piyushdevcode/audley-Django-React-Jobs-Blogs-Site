@@ -10,7 +10,7 @@
   }
   
   .LoginForm {
-    height: 500px;
+    height: fit-content;
     width: 55%;
     margin: auto;
     background: #000;
@@ -20,7 +20,7 @@
     /* transform: translate(180%, -50%); */
     box-sizing: border-box;
     box-shadow: 1px 0px 5px 4px rgba(137, 43, 226, 0.705);
-    padding: 70px 30px;
+    padding: 70px 30px 50px;
   }
   
   .LoginForm h1 {
@@ -43,7 +43,8 @@
   }
   
   .LoginForm input[type="text"],
-  input[type="password"] {
+  input[type="password"],
+  input[type="email"] {
     border: none;
     border-bottom: 1px solid #fff;
     background: transparent;
@@ -62,6 +63,7 @@
     border: 2px solid blueviolet;
     font-size: 18px;
     border-radius: 20px;
+    margin: 10px 0px;
   }
   
   .LoginForm input[type="submit"]:hover {
@@ -73,22 +75,31 @@
   
   .LoginForm a {
     text-decoration: none;
-    font-size: .6em;
+    font-size: .75em;
     line-height: 20px;
     color: darkgrey;
   }
   
   .LoginForm a:hover {
-    font-size: .65em;
+    font-size: .8em;
+    letter-spacing: .05em;
     color: #17ee9d;
   }
   
   /* ---------- ----------*/
-  .loginmodal{
-      /* left: 15% !important; */
-      /* top:50% !important; */
+  .LoginForm .errTooltip{
+    font-size: .85rem;
+    /* background: white; */
+    color: #17ee9d;
+    position: absolute;
+    font-weight: 500;
+    top: 318px;
+    padding: 5px;
   }
   .loginmodal .btn {
     top: 5px;
     left: 70%;
+}
+.after-resp{
+  left: 12%;
 }

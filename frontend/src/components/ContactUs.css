@@ -36,7 +36,6 @@
 
 .CardContact .icon {
   position: absolute;
-  /* color: #ea8685; */
   color:whitesmoke;
   transition: 300ms;
   font-size: 2.5em;
@@ -58,7 +57,7 @@
 .ContactCard h3 {
   top: 20px;
   text-transform: uppercase;
-  color: #ea8685;
+  color: #17ee9d;
 }
 
 .ContactCard span {

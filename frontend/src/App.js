@@ -38,12 +38,14 @@ function App() {
           </div>
 
           <div className="info-block">
-            Audley Consultants (OPC) PVT LTD has been immensely successful in
+            <p>Audley Consultants (OPC) PVT LTD has been immensely successful in
             creating a global network of a highly adept intelligent workforce
             that can help a company achieve its mission-critical projects and
             goals . Keeping pace with projects and being on the lookout for
             extremely talented individuals has become ever more challenging.
-            Here is where Your growth is our goal!{" "}
+            Here is where Your growth is our goal!
+            </p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, dolorum obcaecati sapiente laborum quidem, sed fugiat quam facere sequi, repudiandae consequatur impedit atque earum? Doloribus perferendis praesentium tempora voluptates quia.</p>
           </div>
         </div>
       </div>
@@ -56,6 +58,7 @@ function App() {
           <div className="info-block">
             Audley Consultants has been immensely successful in creating a
             global network by providing different kind of services like
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt sed laborum iusto ipsum perspiciatis vitae, quod deserunt voluptates provident consectetur. Quo atque dolorum id repellat rerum ex expedita, quidem qui!
             <div className="all-services">
               {/* 1st service */}
               <div className="services">

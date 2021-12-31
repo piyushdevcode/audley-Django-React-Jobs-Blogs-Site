@@ -9,19 +9,21 @@ const BlogIndiv = () => {
 
   // ComponentDidMount
   useEffect(() => {
+    const fetchBlogData = () =>{
     axios
       .get(`${API_URL}/posts/${id}/`)
       .then((res) => {
-        console.log("success", res);
+        res.data.created_on = res.data.created_on.slice(0,10);
         setData(res.data);
+        console.log("success",res.data);
       })
       .catch((err) => {
         console.log("Failed to retrieve", err.response);
       });
+    }
+    fetchBlogData();
   }, []);
   const bg_url = "https://picsum.photos/1000/?random=";
-  const date = "2021/12/01";
-  // const date = data.created_on.substr(0,10);
   return (
 
     <main className="blog-main">
@@ -29,10 +31,10 @@ const BlogIndiv = () => {
         <div className="blog-details">
           <div className="blog-title">{data.title}</div>
           <div className="blog-author">Written By: {data.author}</div>
-          <div className="blog-date">Posted on: {date}</div>
+          <div className="blog-date">Posted on: {data.created_on}</div>
         </div>
         <div className="blog-image">
-          <img src={`${bg_url}${id}`} alt="blog-image"/>
+          <img src={`${bg_url}${id}`} alt="postImage"/>
         </div>
         <div className="blog-content">
           <p>{data.content}{data.content}</p>

@@ -10,7 +10,7 @@ import "./feedback.css";
 function AfterSubmit(){
   return(
     <div className="response">
-        <div className="overlay">
+        <div className="overlay"></div>
         <div className="after-resp">
           Thank you for submitting your response.
             <div>
@@ -18,8 +18,6 @@ function AfterSubmit(){
               </div>
         </div>
         </div>
-  </div>
-
   )
 }
 export default class Feedback extends Component {
@@ -52,15 +50,19 @@ export default class Feedback extends Component {
       .catch((err) => {
         console.log(err);
       });
-      // TEST THIS ----------------------
+      
       setTimeout(()=> {
         this.setState({
           showResp : true,
-      })}, 2000)
-      // --------------------------------
+      })}, 1300)
+      
 
   }
   handleChange(event) {
+    setTimeout(()=> {
+      this.setState({
+        showResp : true,
+    })}, 1300)
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -124,7 +126,7 @@ export default class Feedback extends Component {
               ></textarea>
               <label>
                 <ChatBubbleIcon />
-                Feedback...
+                Message...
               </label>
             </div>
             <div className="txt_field">

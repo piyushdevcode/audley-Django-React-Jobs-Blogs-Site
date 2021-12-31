@@ -9,7 +9,7 @@ from django.contrib.auth.models import User
 from .models import Feedback, Post
 from rest_framework import permissions, generics
 from api.permissions import IsOwnerOrReadOnly
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, permission_classes
 from rest_framework.reverse import reverse
 
 #------------ FOR ROOT OF API------------------
@@ -41,11 +41,13 @@ class LoginAPIView(KnoxLoginView):
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
+    permission_classes = [permissions.IsAdminUser]
 
 
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
+    permission_classes = [permissions.IsAdminUser]
 
 # ----- Registering a user via API--------
 
@@ -84,8 +86,10 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 class FeedbackList(generics.ListCreateAPIView):
     queryset = Feedback.objects.all()
     serializer_class = serializers.FeedbackSerilaizer
+    permission_classes = [permissions.IsAdminUser]
 
 
 class FeedbackDetail(generics.RetrieveAPIView):
     queryset = Feedback.objects.all()
-    serializers_class = serializers.FeedbackSerilaizer
+    serializer_class = serializers.FeedbackSerilaizer
+    permission_classes = [permissions.IsAdminUser]

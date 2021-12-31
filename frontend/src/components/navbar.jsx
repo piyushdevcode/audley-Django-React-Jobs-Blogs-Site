@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar_title navbar_item">LOGO</div>
       <div className="navbar_item">
-        <Link to="/">Home</Link>
+        <Link smooth to="/">Home</Link>
       </div>
       <div className="navbar_item">
         <Link smooth to="/#about"> About</Link>
