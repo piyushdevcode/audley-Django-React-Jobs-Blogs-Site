@@ -95,7 +95,7 @@
     padding: 2.2em 1.5em;
     background-color: #000000a8;
     top: 20%;
-    left: 7%;
+    left: 15%;
     border: 1px solid rgb(46, 45, 45);
     box-shadow: 0px 1px 3px 3px rgba(26, 26, 26, 0.438);
     border-radius: .5em;
@@ -106,4 +106,7 @@
     font-size: 7vh;
     fill:#17ee9d;
     
+}
+.FeedbackPage .overlay {
+  transform: translate(-372px, -40px);
 }

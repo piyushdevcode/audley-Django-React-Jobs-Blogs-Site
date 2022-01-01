@@ -87,6 +87,12 @@
   }
   
   /* ---------- ----------*/
+  .center-ele{
+    transform: translate(-50%,-50%);
+    top:50%;
+    left:50%;
+    position: absolute;
+}
   .LoginForm .errTooltip{
     font-size: .85rem;
     /* background: white; */
@@ -99,7 +105,4 @@
   .loginmodal .btn {
     top: 5px;
     left: 70%;
-}
-.after-resp{
-  left: 12%;
 }

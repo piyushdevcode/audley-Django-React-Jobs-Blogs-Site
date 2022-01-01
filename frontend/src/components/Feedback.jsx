@@ -51,18 +51,13 @@ export default class Feedback extends Component {
         console.log(err);
       });
       
+      setTimeout(()=>{this.setState({showResp: true})},1500)
       setTimeout(()=> {
-        this.setState({
-          showResp : true,
-      })}, 1300)
-      
+        this.setState({showResp: false})
+      }, 3500)
 
   }
-  handleChange(event) {
-    setTimeout(()=> {
-      this.setState({
-        showResp : true,
-    })}, 1300)
+  handleChange(event) {  
     this.setState({
       [event.target.name]: event.target.value,
     });
