@@ -51,11 +51,10 @@ class Blogs extends Component {
       showModal: !this.state.showModal,
     });
   };
-
   render() {
-    {
+    
       console.log("--response--", this.state.details);
-    }
+    
     const bg_url = "https://picsum.photos/1000/?random=";
     return (
       <>

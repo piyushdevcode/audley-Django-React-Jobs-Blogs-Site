@@ -1,4 +1,4 @@
-import axios, { Axios } from "axios";
+import axios from "axios";
 import {Component} from"react";
 import AfterSubmitResponse from "./AfterSubmitResponse";
 import { API_URL } from "./constants";
@@ -15,6 +15,8 @@ export default class CreatePost extends Component {
     handleSubmit=(event)=>{
       event.preventDefault();
       const {title,content} =this.state;
+      let slug =title.replace(/ /g, "-");
+      console.log(slug);
       console.log("title: ",title,"\nContent: ",content);
       const token = localStorage.getItem('token');
       let axiosConfig = {
@@ -23,7 +25,7 @@ export default class CreatePost extends Component {
         "Authorization": `Token ${token}`,
       }
       };
-      const payload = {title,content};
+      const payload = {title,slug,content};
       console.log(axiosConfig);
       axios.post(`${API_URL}/posts/`,payload,axiosConfig).then((resp)=>{
         console.log("response: ",resp); 

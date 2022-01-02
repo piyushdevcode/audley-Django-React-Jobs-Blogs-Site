@@ -2,7 +2,7 @@ from django.contrib import admin
 from .models import *
 
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'status','created_on')
+    list_display = ('title','author' ,'slug', 'status','created_on')
     # filter post on basis of status (published or not)
     list_filter = ("status",)
     # search in database 

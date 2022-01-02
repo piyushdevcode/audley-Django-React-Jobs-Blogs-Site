@@ -1,10 +1,8 @@
 import "./App.css";
 import { ReactComponent as BgEle } from "./img/BG.svg";
-import { ReactComponent as BgColored } from "./img/BGcol.svg";
 import { ReactComponent as Recicon } from "./img/recruitIcon.svg";
 import { ReactComponent as Writingicon } from "./img/writingIcon.svg";
 import { ReactComponent as Bulbicon } from "./img/bulbIcon.svg";
-import Services from "./components/services";
 import OurPartners from "./components/Partners";
 import CtaButtons from "./components/ctabutton";
 import ContactUs from "./components/ContactUs";

@@ -14,7 +14,6 @@
 .CardContact {
   position: relative;
   flex: 1 1;
-  /* max-width: 350px; */
   min-width: 33%;
   background-color: #673ab7;
   background: linear-gradient(
