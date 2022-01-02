@@ -64,7 +64,7 @@ class RegisterAPI(generics.GenericAPIView):
         })
 
 #--------------- Posts -------------
-class PostList(generics.ListAPIView):
+class PostList(generics.ListCreateAPIView):
     # Shows only published posts
     queryset = Post.objects.filter(status=1).order_by('-created_on')
     serializer_class = serializers.PostSerializer

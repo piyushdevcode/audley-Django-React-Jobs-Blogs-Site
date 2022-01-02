@@ -86,6 +86,7 @@ body.active-modal {
 }
 
 button.btn.close-modal:hover::after {
+  color: whitesmoke;
   content: "Close";
 }
 

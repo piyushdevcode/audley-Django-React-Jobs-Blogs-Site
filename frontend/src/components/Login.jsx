@@ -67,7 +67,7 @@ export default class Login extends Component {
       const payload = { username, email, password };
       console.log("reg-payload", payload);
       axios
-        .post(`${API_URL}/user/register`, payload)
+        .post(`${API_URL}/user/register/`, payload)
         .then((res) => {
           console.log(res);
           document.forms["loginReg"].reset();

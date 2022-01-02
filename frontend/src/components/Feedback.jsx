@@ -73,7 +73,7 @@ export default class Feedback extends Component {
           >
             <div className="Personal">
               <div className="txt_field">
-                <input
+                 <input
                   type="text"
                   name="name"
                   onChange={this.handleChange}

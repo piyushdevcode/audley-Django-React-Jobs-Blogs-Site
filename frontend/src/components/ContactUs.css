@@ -1,9 +1,7 @@
 .ContactInfo {
   min-height: 100vh;
-  /* background: linear-gradient(180deg, #3f1896, #411c96); */
   background: linear-gradient(180deg,#3f1896, #3f1896c4, #411c96c7,#411c96) ,url(https://i.picsum.photos/id/100/2500/1656.jpg?hmac=gWyN-7ZB32rkAjMhKXQgdHOIBRHyTSgzuOK6U0vXb1w)no-repeat center;
   background-size: cover;
-  /* align-items: center; */
   width: 100%;
   display: flex;
   justify-content: center;
