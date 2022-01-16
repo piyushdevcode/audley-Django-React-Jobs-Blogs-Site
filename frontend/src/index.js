@@ -4,13 +4,13 @@ import "./index.css";
 import App from "./App";
 import Blogs from "./BlogsMain";
 import BlogIndiv from "./BlogIndividual";
+// import NoMatchPage from "./components/NoMatchPage";
 import  Navbar  from "./components/navbar";
 import Footer from "./components/Footer"
 import reportWebVitals from "./reportWebVitals";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route , BrowserRouter as Router,Routes} from 'react-router-dom';
 
-// <Blogs/>
 ReactDOM.render(
   // <React.StrictMode>
   <Router>
@@ -19,10 +19,10 @@ ReactDOM.render(
       <Route path="/" element ={<App/>} />
       <Route path ="/blogs"element = {<Blogs/>} />
       <Route path = "/blogs/:id" element={<BlogIndiv/>}/>
+      {/* <Route path = "/*" element ={<NoMatchPage/>}/> */}
       </Routes>
       <Footer/>
     </Router>
-    // <App/>
   // </React.StrictMode>
   ,
   document.getElementById("root")
