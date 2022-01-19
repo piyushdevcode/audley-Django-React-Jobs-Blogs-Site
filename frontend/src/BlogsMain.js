@@ -94,7 +94,7 @@ class Blogs extends Component {
         <br></br>
         <div className="new-post">
           <div className="Greeting">Hey, {this.state.username==null ?"Guest": this.state.username}</div>
-          <button class="create-post-btn" onClick={this.toggleModal} disabled={!this.state.isAuthenticated?"true":""}>
+          <button className="create-post-btn" onClick={this.toggleModal} disabled={!this.state.isAuthenticated?"true":""}>
             create a post
           </button>
         </div>

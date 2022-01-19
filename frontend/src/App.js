@@ -10,7 +10,9 @@ import { HashLink as Link } from "react-router-hash-link";
 function App() {
   return (
     <div className="App">
+      <div className="bg-wrapper">
       <BgEle className="bg" />
+      </div>
 
       <div className="pageBox">
         <div className="c-info">

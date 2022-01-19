@@ -29,7 +29,7 @@ body,
 /*--------------------BACKGROUND---------*/
 
 .bg {
-  margin-top:-7.2em;
+  /* margin-top:-7.2em; */
   position: absolute;
   opacity: 0.6;
   pointer-events: none;
@@ -213,6 +213,13 @@ body::-webkit-scrollbar-thumb
   margin-bottom: 3.5em;
 }
 
+.bg-wrapper {
+  height: 440%;
+  overflow: hidden;
+  width: 100%;
+  position: absolute;
+  margin-top: -7.2em;
+}
 
 
 

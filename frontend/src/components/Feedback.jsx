@@ -89,6 +89,7 @@ export default class Feedback extends Component {
                   type="text"
                   name="phoneno"
                   onChange={this.handleChange}
+                  maxLength={10}
                   required
                 />
                 <label>
