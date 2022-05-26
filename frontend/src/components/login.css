@@ -1,0 +1,108 @@
+/*-----------Login----------*/
+
+.LoginPage {
+    margin: 0;
+    padding: 0;
+    /* background: url("https://picsum.photos/id/10/2500/1667"); */
+    background-size: cover;
+    background-position: center;
+    font-family: sans-serif;
+  }
+  
+  .LoginForm {
+    height: fit-content;
+    width: 55%;
+    margin: auto;
+    background: #000;
+    color: #fff;
+    top: 50%;
+    border-radius: 1em;
+    /* transform: translate(180%, -50%); */
+    box-sizing: border-box;
+    box-shadow: 1px 0px 5px 4px rgba(137, 43, 226, 0.705);
+    padding: 70px 30px 50px;
+  }
+  
+  .LoginForm h1 {
+    margin: 10px;
+    padding: 0 0 25px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+  }
+  
+  .LoginForm p {
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+  }
+  
+  .LoginForm input {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .LoginForm input[type="text"],
+  input[type="password"],
+  input[type="email"] {
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+  }
+  
+  .LoginForm input[type="submit"] {
+    border: none;
+    outline: none;
+    height: 40px;
+    background: black;
+    color: whitesmoke;
+    border: 2px solid blueviolet;
+    font-size: 18px;
+    border-radius: 20px;
+    margin: 10px 0px;
+  }
+  
+  .LoginForm input[type="submit"]:hover {
+    cursor: pointer;
+    background: linear-gradient(90deg, #721cd5, #dd00f3);
+    border:none;
+    color: whitesmoke;
+  }
+  
+  .LoginForm a {
+    text-decoration: none;
+    font-size: .75em;
+    line-height: 20px;
+    color: darkgrey;
+  }
+  
+  .LoginForm a:hover {
+    font-size: .8em;
+    letter-spacing: .05em;
+    color: #17ee9d;
+  }
+  
+  /* ---------- ----------*/
+  .center-ele{
+    transform: translate(-50%,-50%);
+    top: 50% !important;
+    left: 50% !important;
+    position: absolute;
+}
+  .LoginForm .errTooltip{
+    font-size: .85rem;
+    /* background: white; */
+    color: #17ee9d;
+    position: absolute;
+    font-weight: 500;
+    top: 318px;
+    padding: 5px;
+  }
+  .loginmodal .btn {
+    top: 5px;
+    left: 70%;
+}
