@@ -1,7 +1,7 @@
 from django.db import models
-from django.contrib.auth.models import User
-
-
+# from django.contrib.auth.models import User
+from ckeditor.fields import RichTextField
+from users.models import User
 STATUS = (
     (0,"Draft"),
     (1,"Publish")
@@ -15,7 +15,7 @@ class Post(models.Model):
     # to generate URL for post
     slug = models.SlugField(max_length=200, unique=True)
 
-    content = models.TextField()
+    content = RichTextField()
     
     # if any changes made then when 
     updated_on = models.DateTimeField(auto_now= True)

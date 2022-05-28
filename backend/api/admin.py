@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 from django.utils.translation import gettext, gettext_lazy as _
+
 class PostAdmin(admin.ModelAdmin):
     list_display = ('title','author' ,'slug', 'status','created_on')
     # filter post on basis of status (published or not)

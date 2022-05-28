@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'corsheaders',
     'api.apps.ApiConfig',
     'knox',
+    'users.apps.UsersConfig',
+    'ckeditor',
+    'taggit',
+    'jobs.apps.JobsConfig',
 ]
 
 MIDDLEWARE = [
@@ -146,6 +150,8 @@ REST_FRAMEWORK = {
     # 'PAGE_SIZE': 2
 
 }
+
+AUTH_USER_MODEL = 'users.User'
 
 
 

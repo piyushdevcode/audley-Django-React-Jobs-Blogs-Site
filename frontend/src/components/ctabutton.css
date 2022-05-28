@@ -43,6 +43,7 @@ body.active-modal {
 
 .overlay {
     background: rgba(49,49,49,0.8);
+    filter: contrast(1.5);
 }
 .modal-content {
     position: absolute;
@@ -89,7 +90,6 @@ button.btn.close-modal:hover::after {
   color: whitesmoke;
   content: "Close";
 }
-
 @keyframes anim{
   0%{ transform: translate(-50%,-50%) rotateX(90deg) rotateY(170deg) scale(0);}
   100%{

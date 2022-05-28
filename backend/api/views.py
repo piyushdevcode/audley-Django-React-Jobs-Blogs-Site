@@ -5,7 +5,8 @@ from rest_framework.authtoken.serializers import AuthTokenSerializer
 from knox.views import LoginView as KnoxLoginView
 from rest_framework.response import Response
 from api import serializers
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from users.models import User
 from .models import Feedback, Post
 from rest_framework import permissions, generics
 from api.permissions import IsOwnerOrReadOnly
