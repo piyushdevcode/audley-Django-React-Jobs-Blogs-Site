@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path,re_path
 from rest_framework.urlpatterns import format_suffix_patterns
 from api import views
 from knox import views as knox_views
@@ -13,8 +13,8 @@ urlpatterns = format_suffix_patterns([
     # ------------------ USER -------------
     path('api/users/',
          views.UserList.as_view(), name='user-list'),
-    path('api/users/<int:pk>/',
-         views.UserDetail.as_view()),
+    path('api/users/<int:pk>/',views.UserDetail.as_view(),name='user-detail'),
+    re_path(r'^api/users/(?P<username>\w{0,50})/$',views.UserDetail.as_view(),name='user-detail'),
 
     # ------- SIGN UP ,LOGIN & LOGOUT ----------
     path('api/user/register/',

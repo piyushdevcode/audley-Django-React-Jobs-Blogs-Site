@@ -1,0 +1,10 @@
+form.profile-form {
+    margin: 1em 5em;
+    text-align: center;
+}
+form.profile-form select, form.profile-form input {
+    /* text-align: center; */
+    width: 50vw;
+    left: 50%;
+    margin: auto;
+}

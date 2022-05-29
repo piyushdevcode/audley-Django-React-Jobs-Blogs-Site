@@ -6,7 +6,9 @@ import Blogs from "./BlogsMain";
 import BlogIndiv from "./BlogIndividual";
 // import NoMatchPage from "./components/NoMatchPage";
 import  Navbar  from "./components/navbar";
-import Footer from "./components/Footer"
+import Footer from "./components/Footer";
+import JobIndex from "./JobsIndex";
+import ApplicantProfile from "./components/ApplicantProfile";
 import reportWebVitals from "./reportWebVitals";
 // import 'bootstrap/dist/css/bootstrap.min.css';
 import {Route , BrowserRouter as Router,Routes} from 'react-router-dom';
@@ -19,6 +21,8 @@ ReactDOM.render(
       <Route path="/" element ={<App/>} />
       <Route path ="/blogs"element = {<Blogs/>} />
       <Route path = "/blogs/:id" element={<BlogIndiv/>}/>
+      <Route path = "/profile" element={<ApplicantProfile/>}/>
+      <Route path = "/jobs" element = {<JobIndex/>}/>
       {/* <Route path = "/*" element ={<NoMatchPage/>}/> */}
       </Routes>
       <Footer/>

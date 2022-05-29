@@ -14,6 +14,7 @@ import { Component } from "react";
 import { API_URL } from "./constants/index";
 import { Link } from "react-router-dom";
 import CreatePost from "./CreatePost";
+import parse from 'html-react-parser';
 
 class Blogs extends Component {
   constructor(props) {
@@ -26,8 +27,10 @@ class Blogs extends Component {
       isAuthenticated: false,
     };
   }
-
+  
   componentDidMount() {
+    const root = document.getElementById('root');
+    root.classList.add('blog-page-bg');
     let data;
     let uname = localStorage.getItem('username');
     axios
@@ -74,7 +77,7 @@ class Blogs extends Component {
                     {details.created_on.slice(0, 10)}
                   </CardSubtitle>
                   <CardText>
-                    {details.content.slice(0, this.state.maxlength)}{" "}
+                    {parse(`${details.content.slice(0, this.state.maxlength)}`)} {" "}
                     <span className="rm-dots">
                       <span className="ellipse"> </span>
                       <span className="ellipse"> </span>
@@ -111,6 +114,10 @@ class Blogs extends Component {
         )}
       </>
     );
+  }
+  componentWillUnmount(){
+    const root = document.getElementById('root');
+    root.classList.remove('blog-page-bg');
   }
 }
 export default Blogs;

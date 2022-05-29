@@ -42,6 +42,7 @@ export default function CtaButtons() {
       console.log("response: ",resp); 
       localStorage.removeItem('username');
       localStorage.removeItem('token');
+      localStorage.removeItem('user_id');
       setRenderCount( val => val +1);
     }).catch((err)=>{
       console.log("error: ",err);

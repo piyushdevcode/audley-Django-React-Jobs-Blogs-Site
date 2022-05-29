@@ -7,6 +7,7 @@ import "./navbar.css"
 
 const Navbar = () => {
   document.title = "Audley";
+  const showProfile = localStorage.getItem('user_id') != null ? true : false;
   return (
     <nav className="navbar">
       <div className="navbar_title navbar_item">LOGO</div>
@@ -42,6 +43,9 @@ const Navbar = () => {
           </div>
         </div>
       </div>
+     {showProfile && ( <div className="navbar_item">
+        <Link smooth to="/profile">Profile</Link>
+      </div>)}
     </nav>
   );
 };

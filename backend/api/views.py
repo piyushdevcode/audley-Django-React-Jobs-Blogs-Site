@@ -12,6 +12,7 @@ from rest_framework import permissions, generics
 from api.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.reverse import reverse
+from rest_framework import filters
 
 #------------ FOR ROOT OF API------------------
 
@@ -23,6 +24,9 @@ def api_root(request, format=None):
         'feedback': reverse('feedback-list', request=request, format=format),
         'register': reverse('register',request=request,format=format),
         'login' : reverse('login',request=request,format=format),
+        'applicants': reverse('applicants-list',request=request,format=format),
+        'jobs': reverse('jobs-list',request=request,format=format),
+        'jobsapplied': reverse('jobs-applied',request=request,format=format),
     })
 
 
@@ -38,15 +42,19 @@ class LoginAPIView(KnoxLoginView):
         return super(LoginAPIView, self).post(request, format=None)
 
 #------------------USER-------------
-
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = serializers.UserSerializer
-    permission_classes = [permissions.IsAdminUser]
+    permission_classes = [permissions.IsAuthenticated]
+    filter_backends = [filters.SearchFilter]
+    search_fields =['username']
 
 
+
+# class UserDetail(generics.RetrieveAPIView):
 class UserDetail(generics.RetrieveAPIView):
     queryset = User.objects.all()
+    # lookup_field = "username"
     serializer_class = serializers.UserSerializer
     permission_classes = [permissions.IsAdminUser]
 

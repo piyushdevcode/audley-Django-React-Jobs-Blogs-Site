@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { API_URL } from "./constants";
 import "./blogIndiv.css";
+import parse from 'html-react-parser';
+
 const BlogIndiv = () => {
   const [data, setData] = useState([]);
   let { id } = useParams();
@@ -24,8 +26,10 @@ const BlogIndiv = () => {
     fetchBlogData();
   }, []);
   const bg_url = "https://picsum.photos/1000/?random=";
-  return (
 
+  // console.log(parse('<b>Hello</b'))
+  return (
+    
     <main className="blog-main">
       <div className="blog-sth">
         <div className="blog-details">
@@ -37,9 +41,10 @@ const BlogIndiv = () => {
           <img src={`${bg_url}${id}`} alt="postImage"/>
         </div>
         <div className="blog-content">
-          <p>{data.content}{data.content}</p>
-          <p>{data.content}{data.content}</p>
-          <p>{data.content}{data.content}</p>
+          <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
+          <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
+          <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
+          
           <div className="fake-hr" />
         </div>
       </div>

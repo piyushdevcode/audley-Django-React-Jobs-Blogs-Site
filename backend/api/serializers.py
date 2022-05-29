@@ -23,10 +23,11 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     posts = serializers.HyperlinkedRelatedField(many=True, read_only=True,view_name='post-detail')
+    # user_applicant = serializers.HyperlinkedRelatedField(many=True,read_only=True,view_name='jobs-applied-detail',lookup_field='user')
 
     class Meta:
         model = User
-        fields = ['id', 'username', 'email','posts']
+        fields = ['id', 'username', 'email','posts',]
 
 # --------------- For Registering user -----------------
 class RegisterSerializer(serializers.ModelSerializer):

@@ -6,3 +6,5 @@ class JobAdmin(admin.ModelAdmin):
 
 # Register your models here.
 admin.site.register(Job,JobAdmin)
+admin.site.register(Applicant)
+admin.site.register(JobsApplied)

@@ -35,6 +35,9 @@ body,
   pointer-events: none;
 }
 
+.overflow-hide{
+  overflow: hidden !important;
+}
 /* -----To Center an item------*/
 
 .center {

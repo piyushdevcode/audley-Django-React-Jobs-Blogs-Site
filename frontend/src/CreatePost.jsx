@@ -38,6 +38,9 @@ export default class CreatePost extends Component {
     this.rteChange = this.rteChange.bind(this); 
     
   }
+  componentDidMount(){
+    document.body.classList.add('overflow-hidden');
+  }
   rteChange = (content, delta, source, editor) => {
     let req = editor.getHTML();
     this.setState(
@@ -46,8 +49,6 @@ export default class CreatePost extends Component {
       }
     );
     console.log(editor.getHTML() + typeof(req)); // rich text
-    console.log(editor.getText()); // plain text
-    console.log(editor.getLength()); // number of characters
   }
   handleSubmit = (event) => {
     event.preventDefault();
@@ -55,22 +56,22 @@ export default class CreatePost extends Component {
     let slug = title.replace(/ /g, "-");
     console.log(slug);
     console.log("title: ", title, "\nContent: ", content);
-    // const token = localStorage.getItem('token');
-    // let axiosConfig = {
-    //   headers: {
-    //     'Content-Type': 'application/json;charset=UTF-8',
-    //     "Authorization": `Token ${token}`,
-    //   }
-    // };
-    // const payload = { title, slug, content };
-    // console.log(axiosConfig);
-    // axios.post(`${API_URL}/posts/`, payload, axiosConfig).then((resp) => {
-    //   console.log("response: ", resp);
-    //   setTimeout(() => { this.setState({ submitted: true }) }, 1000);
-    //   setTimeout(() => { document.getElementById('crtpost-btn').click() }, 3000);
-    // }).catch((err) => {
-    //   console.log("error: ", err);
-    // })
+    const token = localStorage.getItem('token');
+    let axiosConfig = {
+      headers: {
+        'Content-Type': 'application/json;charset=UTF-8',
+        "Authorization": `Token ${token}`,
+      }
+    };
+    const payload = { title, slug, content };
+    console.log(axiosConfig);
+    axios.post(`${API_URL}/posts/`, payload, axiosConfig).then((resp) => {
+      console.log("response: ", resp);
+      setTimeout(() => { this.setState({ submitted: true }) }, 1000);
+      setTimeout(() => { document.getElementById('crtpost-btn').click() }, 3000);
+    }).catch((err) => {
+      console.log("error: ", err);
+    })
 
   };
   handleChange = (event) => {
@@ -110,5 +111,8 @@ export default class CreatePost extends Component {
         </div>
       </>
     );
+  }
+  componentWillUnmount(){
+    document.body.classList.remove('overflow-hidden');
   }
 }

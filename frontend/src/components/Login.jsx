@@ -46,10 +46,24 @@ export default class Login extends Component {
 
       const onSuccess = ({ data }) => {
         // setClientToken(data.token);
+        let user_id = null;
         this.setState({ isAuthorized: true, showErr: false });
         console.log(`Token : ${data.token}`);
         localStorage.setItem("token", data.token);
         localStorage.setItem("username", username);
+        let axiosConfig = {
+          headers: {
+            'Content-Type': 'application/json;charset=UTF-8',
+            "Authorization": `Token ${data.token}`,
+          }
+        };
+        console.log(axiosConfig);
+        axios.get(`${API_URL}/users/?search=${username}`,axiosConfig).then((resp) => {
+          localStorage.setItem("user_id",resp.data[0].id);
+
+        }).catch((err) => {
+          console.log("error: ", err);
+        })
         document.forms["loginReg"].reset();
         this.handleResponse();
       };

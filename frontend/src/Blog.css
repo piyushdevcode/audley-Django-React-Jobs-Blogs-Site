@@ -4,6 +4,10 @@ body{
     overflow-x: hidden; 
     overflow-y:scroll;
 }
+.blog-page-bg {
+    background: radial-gradient(circle, hsl(305deg 80% 34%) 0%, rgb(16 16 66) 100%);
+    
+}
 .card{
     border:0px;
     border-radius: 1.2em;
