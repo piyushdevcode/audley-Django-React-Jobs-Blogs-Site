@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'taggit',
     'jobs.apps.JobsConfig',
     'django_countries',
+    'django_cleanup.apps.CleanupConfig',
 ]
 
 MIDDLEWARE = [

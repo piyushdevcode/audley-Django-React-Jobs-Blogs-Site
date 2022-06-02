@@ -24,6 +24,7 @@ const Footer=()=>{
           <li className="menu__item"><Link className="menu__link" smooth to="/#top">Home</Link></li>
           <li className="menu__item"><Link className="menu__link" smooth to="/#about">About</Link></li>
           <li className="menu__item"><Link className="menu__link"smooth to="/#services">Services</Link></li>
+          <li className="menu__item"><Link className="menu__link"smooth to="/jobs">Jobs</Link></li>
           <li className="menu__item"><Link className="menu__link"smooth to="/blogs">Blogs</Link></li>
           <li className="menu__item"><Link className="menu__link"smooth to="/#contact">Contact</Link></li>
     

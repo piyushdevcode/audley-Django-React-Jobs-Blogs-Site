@@ -43,6 +43,7 @@ export default function CtaButtons() {
       localStorage.removeItem('username');
       localStorage.removeItem('token');
       localStorage.removeItem('user_id');
+      localStorage.removeItem('jobs_id');
       setRenderCount( val => val +1);
     }).catch((err)=>{
       console.log("error: ",err);
@@ -62,9 +63,9 @@ export default function CtaButtons() {
       </div>
       {/* CONDITIONAL RENDERING */}
       {modal &&( 
-      <div className="modal">
+      <div className="modal modal-own">
           <div className="overlay"></div>
-          <div className="modal-content">
+          <div className="modal-content modal-content-own">
               <Feedback/>
             <button
             className="btn close-modal"
@@ -75,9 +76,9 @@ export default function CtaButtons() {
       ) 
     }
     {modal2 && uname==null && (
-      <div className="modal">
+      <div className="modal modal-own">
       <div className="overlay"></div>
-      <div className="loginmodal modal-content">
+      <div className="loginmodal modal-content modal-content-own">
           <Login/>
         <button
         id="modal-btn-cl"

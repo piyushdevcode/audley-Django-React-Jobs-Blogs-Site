@@ -1,0 +1,46 @@
+.job-card {
+    color: gold;
+    width: 40vw;
+    border: #93118c 2px solid;
+    box-shadow: 1px 1px 10px #27114f;
+    border-radius: .75em;
+    margin: 1em 0.5em;
+}
+.jobs-group{
+    display: flex;
+    min-height: 100vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+a.job-tags {
+    color: white;
+    background-color: dodgerblue;
+    text-decoration: none;
+    width: fit-content;
+    font-size: .9rem;
+    border-radius: 1em;
+    padding: 0em .75em;
+}
+.tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    column-gap: .5em;
+    justify-content: flex-start;
+    margin: .25em 0 .75em .75em;
+}
+.modal-dialog{
+    color: black;
+}
+
+.job-card .card-footer{
+    border-top: 1px solid blueviolet;
+    font-size: smaller;
+    color: #ffd700ba;
+}
+.job-card .card-header{
+    box-shadow: -1px -1px 10px 0px #ff00ff;
+}

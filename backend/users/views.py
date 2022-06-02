@@ -4,7 +4,8 @@ from jobs.models import *
 from rest_framework.views import APIView
 from rest_framework.parsers import MultiPartParser, FormParser
 from rest_framework.response import Response
-from rest_framework import status,filters,generics
+from rest_framework import status,filters,generics, permissions
+from api.permissions import IsOwnerOrReadOnly
 
 # Create your views here.
 
@@ -30,4 +31,6 @@ class ApplicantList(generics.ListAPIView):
 class ApplicantDetail(generics.RetrieveUpdateAPIView):
     queryset = Applicant.objects.all()
     serializer_class = ApplicantSerializer
+    permission_classes = [IsOwnerOrReadOnly | permissions.IsAdminUser]
+
 

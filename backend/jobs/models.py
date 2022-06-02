@@ -3,11 +3,12 @@ from django.utils import timezone
 from taggit.managers import TaggableManager
 from users.models import User
 from django_countries.fields import CountryField
+from ckeditor.fields import RichTextField
 # Create your models here.
 JOB_TYPE = (
     ("Full Time",'Full Time'),
     ('Part Time','Part Time'),
-    ('Intership','Intership'),
+    ('Internship','Internship'),
 )
 LOC_TYPE =(
     ('Remote','Remote'),
@@ -23,7 +24,7 @@ GENDER_CHOICES = (
 
 class Job(models.Model):
     title = models.CharField(max_length=50)
-    description = models.TextField(max_length=500)
+    description = RichTextField()
     location = models.CharField(max_length=50)
     location_type = models.CharField(choices=LOC_TYPE,max_length=30)
     company_name = models.CharField(max_length=50)
@@ -65,10 +66,11 @@ class JobsApplied(models.Model):
     date_apply = models.DateTimeField(default=timezone.now)
     class Meta:
         ordering = ["id"]
+        unique_together= ['job','user']
 
 
     def __str__(self):
-        return self.job.title
+        return self.job.title + " | " + self.user.username + " | " + self.get_status_display()
     
 
 

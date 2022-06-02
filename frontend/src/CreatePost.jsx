@@ -82,9 +82,9 @@ export default class CreatePost extends Component {
   render() {
     return (
       <>
-        <div className="modal">
+        <div className="modal modal-own">
           <div className="overlay"></div>
-          <div className="modal-content post-modal">
+          <div className="modal-content modal-content-own post-modal">
             <div className="create-post">
               <form className="form-filling" onSubmit={this.handleSubmit}>
                 <div className="txt_field">

@@ -64,19 +64,19 @@ class Blogs extends Component {
         <div>
           {this.state.details.map((details) => (
             <div key={details.id}>
-              <Card className="w-75 m-5 .bg-info">
+              <Card className="w-75 m-5 .bg-info card-blog">
                 <div
                   className="blogs-bg-img"
                   style={{ backgroundImage: `url(${bg_url}${details.id})` }}
                 />
-                <CardBody className=".bg-info">
+                <CardBody className="card-body-blog .bg-info">
                   <CardTitle tag="h3">{details.title}</CardTitle>
                   <hr></hr>
                   <CardSubtitle className="mb-2 opacity-75" tag="h6">
                     Author: {details.author} | Created at:{" "}
                     {details.created_on.slice(0, 10)}
                   </CardSubtitle>
-                  <CardText>
+                  <CardText className="card-blog-text">
                     {parse(`${details.content.slice(0, this.state.maxlength)}`)} {" "}
                     <span className="rm-dots">
                       <span className="ellipse"> </span>

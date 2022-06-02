@@ -9,6 +9,10 @@ body,
   color:whitesmoke;
 }
 
+#root{
+  background: radial-gradient(circle, hsl(305deg 80% 34%) 0%, rgb(16 16 66) 100%);
+}
+
 /* ----------BG CIRCLES-------- */
 
 #Mask_Group_3 {
@@ -189,6 +193,7 @@ body::-webkit-scrollbar-thumb
   font-size: 1.4vw;
 }
 .service-subtitle {
+  margin-top: .3em;
   opacity: 0.5;
   font-size: 0.9vw;
 }

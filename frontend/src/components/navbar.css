@@ -5,6 +5,7 @@
   .navbar {
     color: whitesmoke;
     display: flex;
+    z-index: 999;
     align-items: baseline;
     padding: 0 10px;
     font-size: calc(0.8em + .5vh);

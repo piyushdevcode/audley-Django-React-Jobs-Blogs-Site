@@ -29,7 +29,7 @@ body.active-modal {
     fill: #101042;
     box-shadow: inset 0px 0px 0px 2px white;
   }
-  .modal, .overlay {
+  .modal-own, .overlay {
     width: 100vw;
     height: 100vh;
     top: 0;
@@ -45,7 +45,7 @@ body.active-modal {
     background: rgba(49,49,49,0.8);
     filter: contrast(1.5);
 }
-.modal-content {
+.modal-content-own {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -74,13 +74,13 @@ body.active-modal {
   margin: 100px auto 0;
   font-size: 18px;
 }
-.modal-content .btn{
+.modal-content-own .btn{
   color: whitesmoke;
   outline: none;
   font-size: .75rem;
   transition: .5s ease-in-out;
 }
-.modal-content .btn:hover{
+.modal-content-own .btn:hover{
   transform: scale(1.2);
   color: whitesmoke;
   width: fit-content;

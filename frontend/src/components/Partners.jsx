@@ -22,10 +22,13 @@ export default class OurPartners extends Component {
     const settings = {
       dots: true,
       infinite: true,
-      speed: 500,
+      autoplay: true,
+      speed: 1000,
+      autoplayspeed: 500,
       slidesToShow: 4,
       slidesToScroll: 2,
       adaptiveHeight: true,
+      cssEase: "linear",
     };
     return (
       <div className="content-block our-partners">
@@ -37,6 +40,8 @@ export default class OurPartners extends Component {
           <CustomSlide imgsrc={"https://picsum.photos/600?random=3"}  />
           <CustomSlide imgsrc={"https://picsum.photos/600"}  />
           <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=6"}  />
+          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=7"}  />
+          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=8"}  />
         </Slider>
       </div>
     );

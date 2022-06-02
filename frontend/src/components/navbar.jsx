@@ -21,6 +21,9 @@ const Navbar = () => {
         <Link smooth to="/#services">Services</Link>
       </div>
       <div className="navbar_item">
+        <Link smooth to="/jobs">Jobs</Link>
+      </div>
+      <div className="navbar_item">
         <Link smooth to="/blogs">Blog</Link>
       </div>
       <div className="navbar_item"><Link smooth to="/#contact">Contact</Link></div>

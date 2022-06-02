@@ -17,9 +17,10 @@ class JobDetail(generics.RetrieveAPIView):
     queryset = Job.objects.all()
     serializer_class = serializers.JobSerializer
 
-class JobAppliedList(generics.ListAPIView):
+class JobAppliedList(generics.ListCreateAPIView):
     queryset = JobsApplied.objects.all()
     serializer_class = serializers.JobsAppliedSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     filter_backends = [filters.SearchFilter]
     search_fields = ['user__username']
 

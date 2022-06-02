@@ -45,7 +45,6 @@ export default class Login extends Component {
       const payload = { username, password };
 
       const onSuccess = ({ data }) => {
-        // setClientToken(data.token);
         let user_id = null;
         this.setState({ isAuthorized: true, showErr: false });
         console.log(`Token : ${data.token}`);
@@ -64,6 +63,25 @@ export default class Login extends Component {
         }).catch((err) => {
           console.log("error: ", err);
         })
+        axios.get(`${API_URL}/jobsapplied?search=${username}`).then((resp) => {
+          console.log("JOb details-",resp.data);
+          let jobsdata = resp.data;
+          let applied_jobs = [];
+          console.log("trimmed: ",jobsdata.slice(),typeof(jobsdata.data))
+          if (jobsdata.length){
+          for (let i = 0 ; i < jobsdata.length; i++ ){
+            let details = jobsdata[i];
+              applied_jobs.push(parseInt(details.job))
+            }
+          }
+          console.log("Jobs Appl=",applied_jobs)
+    
+          localStorage.setItem("jobs_id",JSON.stringify(applied_jobs));
+    
+        }).catch((err) => {
+          console.log("error: ", err);
+        })
+        
         document.forms["loginReg"].reset();
         this.handleResponse();
       };
@@ -108,6 +126,7 @@ export default class Login extends Component {
       this.setState({ showResp: false });
       if (this.state.showLogin) {
         document.getElementById("modal-btn-cl").click();
+        window.location.reload();
       }
     }, 4000);
   };
