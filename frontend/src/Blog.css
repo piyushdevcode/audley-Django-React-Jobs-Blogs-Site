@@ -1,19 +1,22 @@
-body{
+body {
     background-color: #101042;
-    color:whitesmoke;
-    overflow-x: hidden; 
-    overflow-y:scroll;
+    color: whitesmoke;
+    overflow-x: hidden;
+    overflow-y: scroll;
 }
+
 .blog-page-bg {
     background: radial-gradient(circle, hsl(305deg 80% 34%) 0%, rgb(16 16 66) 100%);
-    
+
 }
-.card-blog{
-    border:0px;
+
+.card-blog {
+    border: 0px;
     border-radius: 1.2em;
     font-size: 1.1em;
 }
-.blogs-bg-img{
+
+.blogs-bg-img {
     filter: grayscale();
     border-radius: inherit;
     background-repeat: no-repeat;
@@ -23,52 +26,64 @@ body{
     width: 100%;
     height: 100%;
 }
-.card-blog:focus,.card-blog:hover .blogs-bg-img{
+
+.card-blog:focus,
+.card-blog:hover .blogs-bg-img {
     border-radius: inherit;
-    filter:blur(1px);
+    filter: blur(1px);
 }
-.card-blog::after{
-    background-color: rgb(14, 13, 13,50%);
+
+.card-blog::after {
+    background-color: rgb(14, 13, 13, 50%);
     border-radius: inherit;
     content: ' ';
     height: 100%;
     width: 100%;
-    position:absolute;
+    position: absolute;
     z-index: 0;
 }
-.card-body-blog{
+
+.card-body-blog {
     box-shadow: 10px 9px 14px 1px #000000b7;
     z-index: 1;
     border-radius: inherit;
     padding: 1.5em 2em;
-    text-shadow: 2px 1px 3px  rgba(0, 0, 0, 0.609);
+    text-shadow: 2px 1px 3px rgba(0, 0, 0, 0.609);
 }
+
 .card-blog:hover::after {
-    background-color:rgba(14, 13, 13, 25%) ;
+    background-color: rgba(14, 13, 13, 25%);
 }
-.card-blog-text{
+
+.card-blog-text {
     width: 93%;
 }
-.btn-secondary{
+
+.btn-secondary {
     background-color: blueviolet;
 }
-.btn-secondary:hover{
+
+.btn-secondary:hover {
     color: whitesmoke;
     border: 1px solid;
     background-color: #101042;
 }
-hr{
+
+hr {
     border: 1px solid;
 }
-.btn a,.btn a:hover{
+
+.btn a,
+.btn a:hover {
     text-decoration: none;
     font-size: 1.1em;
     font-weight: 500;
-    color:whitesmoke;
+    color: whitesmoke;
 
 }
+
 .ellipse {
-    background:#ffffffe3;
+    background: #ffffffe3;
     width: 5px;
     height: 5px;
     vertical-align: middle;
@@ -77,14 +92,16 @@ hr{
     border-radius: 50%;
     box-shadow: 3px 1px 1px 1px rgba(0, 0, 0, 0.301);
 }
+
 /*  for new post */
-.create-post{
+.create-post {
     background: blueviolet;
     padding: 1.5em;
     border-radius: 0.75em;
     z-index: 999;
 }
-.new-post{
+
+.new-post {
     right: 9px;
     position: absolute;
     z-index: 1;
@@ -92,17 +109,20 @@ hr{
     top: 50%;
     border-radius: .8em;
 }
-.create-close-modal{
-    z-index:9999;
-    color:whitesmoke;
+
+.create-close-modal {
+    z-index: 9999;
+    color: whitesmoke;
 }
+
 .create-post .form-filling ::placeholder {
     color: #f5f5f585;
     font-weight: 500;
     font-size: 1.2em;
 }
+
 button.create-post-btn {
-    color:whitesmoke;
+    color: whitesmoke;
     background: none;
     fill: #101042;
     outline: none;
@@ -110,25 +130,29 @@ button.create-post-btn {
     padding: 1em;
     border-radius: .75em;
     box-shadow: inset 0px 0px 0px 2px white;
-    
+
 }
+
 button.create-post-btn:hover {
-    background: linear-gradient(
-    90deg, #721cd5, #dd00f3);
+    background: linear-gradient(90deg, #721cd5, #dd00f3);
 }
-button.create-post-btn:disabled{
+
+button.create-post-btn:disabled {
     background: none;
     cursor: not-allowed;
 }
-.new-post .Greeting{
+
+.new-post .Greeting {
     text-align: center;
     margin-bottom: .5em;
 }
+
 .post-modal {
     animation: anim 1s, box-size 2.5s 1s 1 forwards;
-   
+
     /* max-width: 90vw; */
 }
+
 @keyframes box-size {
     100% {
         max-width: 90vw;
@@ -139,6 +163,11 @@ button.create-post-btn:disabled{
     background: azure;
 }
 
-.ql-editor{
+.ql-editor {
     height: 45vh !important;
+}
+
+.ql-editor.ql-blank::before {
+    font-size: 1rem;
+    color: #ffffffad !important;
 }

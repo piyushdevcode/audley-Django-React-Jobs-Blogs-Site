@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="App">
       <div className="bg-wrapper blog-page-bg">
-      <BgEle className="bg" />
+        <BgEle className="bg" />
       </div>
 
       <div className="pageBox">
@@ -19,7 +19,7 @@ function App() {
           <div className="cname">Audley Consultants</div>
           <div className="cname tline">Audley Consultants</div>
         </div>
-      <CtaButtons/>
+        <CtaButtons />
       </div>
 
       <div className="pageBox p2">
@@ -29,21 +29,21 @@ function App() {
               ABOUT US
               <Link to="/#about">
                 <span className="downarrow">
-                <span className="chevron"></span>
-                <span className="chevron"></span>
-              </span>
-                </Link>
-              </p> 
-              
+                  <span className="chevron"></span>
+                  <span className="chevron"></span>
+                </span>
+              </Link>
+            </p>
+
           </div>
 
           <div className="info-block">
             <p>Audley Consultants (OPC) PVT LTD has been immensely successful in
-            creating a global network of a highly adept intelligent workforce
-            that can help a company achieve its mission-critical projects and
-            goals . Keeping pace with projects and being on the lookout for
-            extremely talented individuals has become ever more challenging.
-            Here is where Your growth is our goal!
+              creating a global network of a highly adept intelligent workforce
+              that can help a company achieve its mission-critical projects and
+              goals . Keeping pace with projects and being on the lookout for
+              extremely talented individuals has become ever more challenging.
+              Here is where Your growth is our goal!
             </p>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Veritatis, dolorum obcaecati sapiente laborum quidem, sed fugiat quam facere sequi, repudiandae consequatur impedit atque earum? Doloribus perferendis praesentium tempora voluptates quia.</p>
           </div>
@@ -84,17 +84,16 @@ function App() {
                 <div className="service-title">Recruitment Services</div>
                 <div className="service-subtitle">Permanent/Contractual</div>
               </div>
-              {/* <Services icon="yp" title="Job" subtitle="Less" /> */}
             </div>
           </div>
         </div>
       </div>
       <div className="pageBox p4">
         <OurPartners />
-        </div>
-        <div className="pageBox p5">
+      </div>
+      <div className="pageBox p5">
 
-        <ContactUs/>
+        <ContactUs />
       </div>
     </div>
   );

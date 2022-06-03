@@ -1,14 +1,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import "./Blog.css";
-import {
-  Card,
-  CardBody,
-  CardSubtitle,
-  CardText,
-  Button,
-  CardTitle,
-} from "reactstrap";
+import {Card,CardBody,CardSubtitle,CardText,Button,CardTitle,} from "reactstrap";
 import axios from "axios";
 import { Component } from "react";
 import { API_URL } from "./constants/index";
@@ -27,7 +20,7 @@ class Blogs extends Component {
       isAuthenticated: false,
     };
   }
-  
+
   componentDidMount() {
     const root = document.getElementById('root');
     root.classList.add('blog-page-bg');
@@ -41,13 +34,13 @@ class Blogs extends Component {
         this.setState({
           details: data,
           username: uname,
-          isAuthenticated: uname==null ? false: true ,
+          isAuthenticated: uname == null ? false : true,
         });
       })
       .catch((err) => {
         console.log(API_URL, "Failed to retrieve", err.response);
       });
-      console.log("AithState-",this.state.isAuthenticated,"---",this.state.username);
+    console.log("AithState-", this.state.isAuthenticated, "---", this.state.username);
   }
   toggleModal = () => {
     this.setState({
@@ -55,9 +48,9 @@ class Blogs extends Component {
     });
   };
   render() {
-    
-      console.log("--response--", this.state.details);
-    
+
+    console.log("--response--", this.state.details);
+
     const bg_url = "https://picsum.photos/1000/?random=";
     return (
       <>
@@ -96,8 +89,8 @@ class Blogs extends Component {
         <br></br>
         <br></br>
         <div className="new-post">
-          <div className="Greeting">Hey, {this.state.username==null ?"Guest": this.state.username}</div>
-          <button className="create-post-btn" onClick={this.toggleModal} disabled={!this.state.isAuthenticated?"true":""}>
+          <div className="Greeting">Hey, {this.state.username == null ? "Guest" : this.state.username}</div>
+          <button className="create-post-btn" onClick={this.toggleModal} disabled={!this.state.isAuthenticated ? "true" : ""}>
             create a post
           </button>
         </div>
@@ -115,7 +108,7 @@ class Blogs extends Component {
       </>
     );
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     const root = document.getElementById('root');
     root.classList.remove('blog-page-bg');
   }

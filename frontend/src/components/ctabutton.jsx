@@ -45,6 +45,7 @@ export default function CtaButtons() {
       localStorage.removeItem('user_id');
       localStorage.removeItem('jobs_id');
       setRenderCount( val => val +1);
+      window.location.reload();
     }).catch((err)=>{
       console.log("error: ",err);
     });

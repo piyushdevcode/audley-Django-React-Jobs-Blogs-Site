@@ -11,7 +11,7 @@ class CustomSlide extends Component {
       // ...props will be used for company name and other things
       <div className="img-circle">
         <img src={imgsrc} alt="partner" />
-          <p className="comp-name">Company name</p>
+        <p className="comp-name">Company name</p>
       </div>
     );
   }
@@ -35,13 +35,13 @@ export default class OurPartners extends Component {
         <p className="heading">Our Partners</p>
         <Slider {...settings}>
           <CustomSlide imgsrc={"https://source.unsplash.com/random/?sig=1"} />
-          <CustomSlide imgsrc={"https://picsum.photos/600?random=1"}  />
-          <CustomSlide imgsrc={"https://picsum.photos/600?random=2"}  />
-          <CustomSlide imgsrc={"https://picsum.photos/600?random=3"}  />
-          <CustomSlide imgsrc={"https://picsum.photos/600"}  />
-          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=6"}  />
-          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=7"}  />
-          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=8"}  />
+          <CustomSlide imgsrc={"https://picsum.photos/600?random=1"} />
+          <CustomSlide imgsrc={"https://picsum.photos/600?random=2"} />
+          <CustomSlide imgsrc={"https://picsum.photos/600?random=3"} />
+          <CustomSlide imgsrc={"https://picsum.photos/600"} />
+          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=6"} />
+          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=7"} />
+          <CustomSlide imgsrc={"https://source.unsplash.com/random/600?sig=8"} />
         </Slider>
       </div>
     );

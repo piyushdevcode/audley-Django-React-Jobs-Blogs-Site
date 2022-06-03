@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText, FormFeedback } from 'reactstrap';
 import { API_URL } from '../constants';
-import { circularProgressClasses, dividerClasses } from '@mui/material';
 import "./profile.css";
 import default_img from "../img/Profile-Icon.png"
+import { ListGroup, ListGroupItem, Badge } from 'reactstrap';
 
 class ApplicantProfile extends Component {
   constructor(props) {
@@ -16,11 +16,14 @@ class ApplicantProfile extends Component {
       country: 'IN',
       location: '',
       resume: null,
-      img_url : default_img, //specify default image
+      img_url: default_img, //specify default image
       isAuthenticated: true,
       submitted: false,
       hasProfile: false,
       username: '',
+      job_details: null,
+      isLoading: true,
+      hasAppliedJobs: false,
     };
   }
   componentDidMount() {
@@ -36,93 +39,105 @@ class ApplicantProfile extends Component {
       axios
         .get(`${API_URL}/applicants/?search=${uname}`)
         .then((res) => {
-          console.log("success",res.data);
+          console.log("success", res.data);
           let data = res.data;
           const { full_name, gender, image, country, location, resume } = data[0];
           this.setState({
             full_name, gender, image, country, location, resume
           });
           this.setState({
-            img_url : image ? image : default_img,
+            img_url: image ? image : default_img,
             hasProfile: true,
-        })
+          })
           console.log('Destructure o/p -', full_name, this.state.resume);
-          console.log("IMAGE CONTAINS",this.state.image,typeof(this.state.image),this.state.img_url)
         })
         .catch((err) => {
           console.log(API_URL, "Failed to retrieve", err);
         });
+
+      //
+      axios.get(`${API_URL}/jobsapplied?search=${uname}`).then((resp) => {
+        // console.log("JOb details-",resp.data);
+        let jobsdata = resp.data;
+        this.setState({
+          job_details: resp.data,
+          hasAppliedJobs: true,
+          isLoading: false,
+        })
+      }).catch((err) => {
+        console.log("error: ", err);
+      })
+      //
       console.log("AuthState-", this.state.isAuthenticated, "---", this.state.username);
+
     }
-      
+
   }
   handleChange = (event) => {
     this.setState({
       [event.target.name]: event.target.value
     })
+    console.log("JOb details-", this.state.job_details);
   };
 
   handleFileChange = (event) => {
     this.setState({
       [event.target.name]: event.target.files[0],
     })
-    console.log("Data",event.target.files[0],typeof(event.target.files[0]));
+    console.log("Data", event.target.files[0], typeof (event.target.files[0]));
   };
-  
+
   handleSubmit = (e) => {
     e.preventDefault();
 
     let form_data = new FormData();
     const uid = localStorage.getItem("user_id");
     const uname = this.state.username
-   
-     //Converting Img URL to FIle object
-     console.log(typeof(this.state.image) != 'string',typeof(this.state.image),typeof(default_img),default_img)
-     if(typeof(this.state.image) != 'string' && this.state.image != null){
-      form_data.append('image', this.state.image, "profile_img-"+ uname + ".png");
-     }
-     console.log(typeof(this.state.resume) === 'object', typeof(this.state.resume))
-      if(typeof(this.state.resume) != 'string' && this.state.resume != null){
-      form_data.append('resume',this.state.resume,"resume_"+uname+".pdf")
-      }
-    
-    console.log("Before sending form: ",this.state);
-    ////FORM DATA---------------------------
-    
-  ////FORM DATA---------------------------
-  form_data.append('user', uid)
-  form_data.append('full_name', this.state.full_name);
-  form_data.append('gender', this.state.gender)
-  form_data.append('country', this.state.country)
-  form_data.append('location', this.state.location)
+
+    //Converting Img URL to FIle object
+    console.log(typeof (this.state.image) != 'string', typeof (this.state.image), typeof (default_img), default_img)
+    if (typeof (this.state.image) != 'string' && this.state.image != null) {
+      form_data.append('image', this.state.image, "profile_img-" + uname + ".png");
+    }
+    console.log(typeof (this.state.resume) === 'object', typeof (this.state.resume))
+    if (typeof (this.state.resume) != 'string' && this.state.resume != null) {
+      form_data.append('resume', this.state.resume, "resume_" + uname + ".pdf")
+    }
+
+    console.log("Before sending form: ", this.state);
+    form_data.append('user', uid)
+    form_data.append('full_name', this.state.full_name);
+    form_data.append('gender', this.state.gender)
+    form_data.append('country', this.state.country)
+    form_data.append('location', this.state.location)
     const token = localStorage.getItem('token');
     let headers = {
-          headers: {
-            "Content-Type": "multipart/form-data",
-            "Authorization": `Token ${token}`,
-          }
-        }
-
-      let url = 'http://localhost:8000/api/applicants/';
-    if(this.state.hasProfile){
-      axios.put(`${url}${uid}`,form_data,headers).then((resp)=>{console.log(resp.data);
-        this.setState({
-                submitted: true,
-              })
-      }).catch((err)=>{console.log(err)})
+      headers: {
+        "Content-Type": "multipart/form-data",
+        "Authorization": `Token ${token}`,
+      }
     }
-    else{
-    axios.post(url, form_data, headers)
-      .then(res => {
-        console.log(res.data);
+
+    let url = 'http://localhost:8000/api/applicants/';
+    if (this.state.hasProfile) {
+      axios.put(`${url}${uid}`, form_data, headers).then((resp) => {
+        console.log(resp.data);
         this.setState({
           submitted: true,
         })
-        //document.forms['profile-form'].reset();
-      })
-      .catch(err => {
-        console.log(err.data)
-      })
+      }).catch((err) => { console.log(err) })
+    }
+    else {
+      axios.post(url, form_data, headers)
+        .then(res => {
+          console.log(res.data);
+          this.setState({
+            submitted: true,
+          })
+        })
+        .catch(err => {
+          console.log(err.data)
+        })
     }
   }
   render() {
@@ -134,7 +149,7 @@ class ApplicantProfile extends Component {
             <FormGroup>
               <Label for="full_name">Full Name</Label>
               <Input valid={this.state.submitted} type="text" name="full_name" placeholder="Your Full Name" value={this.state.full_name} onChange={this.handleChange}
-              required/>
+                required />
               {this.state.submitted && (<FormFeedback valid>Profile updated Successfully !</FormFeedback>)}
             </FormGroup>
 
@@ -167,9 +182,19 @@ class ApplicantProfile extends Component {
                 (PDF only)
               </FormText>
             </FormGroup>
-            <Button>Submit</Button>
+            <Button>Edit Profile</Button>
 
           </Form>
+          {this.state.hasAppliedJobs && !this.state.isLoading ?
+            (<div className="my-jobs">
+              <ListGroupItem className='applied-jobs'>My Jobs</ListGroupItem>
+              {this.state.job_details.map((details, i) => (
+                <ListGroup>
+                  <ListGroupItem className="justify-content-between">  <a href="/jobs">{details.job_name}</a> <Badge pill className={details.status_r}>{details.status_r}</Badge></ListGroupItem>
+                </ListGroup>
+              ))}
+            </div>
+            ) : ''}
         </>
       ) : (<div>Hey, Please Login to see profile</div>)
     );

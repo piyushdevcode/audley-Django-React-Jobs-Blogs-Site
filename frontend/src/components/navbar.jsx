@@ -2,7 +2,7 @@ import React from "react";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import {HashLink as Link} from 'react-router-hash-link';
+import { HashLink as Link } from 'react-router-hash-link';
 import "./navbar.css"
 
 const Navbar = () => {
@@ -34,19 +34,19 @@ const Navbar = () => {
         Follow Us
         <div className="follow_handles">
           <div className="follow_item">
-            <a target="blank" href="https://www.instagram.com"className="follow-links"><InstagramIcon/> Instagram
-          </a></div>
+            <a target="blank" href="https://www.instagram.com" className="follow-links"><InstagramIcon /> Instagram
+            </a></div>
           <div className="follow_item">
-            <a target="blank" href="https://www.facebook.com"className="follow-links"> <FacebookIcon/> Facebook
-          </a>
+            <a target="blank" href="https://www.facebook.com" className="follow-links"> <FacebookIcon /> Facebook
+            </a>
           </div>
           <div className="follow_item">
-            <a target="blank" href="https://www.linkedin.com" className="follow-links"><LinkedInIcon/> LinkedIn
-          </a>
+            <a target="blank" href="https://www.linkedin.com" className="follow-links"><LinkedInIcon /> LinkedIn
+            </a>
           </div>
         </div>
       </div>
-     {showProfile && ( <div className="navbar_item">
+      {showProfile && (<div className="navbar_item">
         <Link smooth to="/profile">Profile</Link>
       </div>)}
     </nav>

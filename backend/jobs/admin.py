@@ -2,7 +2,8 @@ from django.contrib import admin
 from .models import *
 
 class JobAdmin(admin.ModelAdmin):
-    pass
+    list_display = ('title','company_name','location','salary')
+    search_fields =['title','category','tags__name']
 class JobAppliedAdmin(admin.ModelAdmin):
     list_filter = ('date_apply',)
     list_display = ('job','user','status')

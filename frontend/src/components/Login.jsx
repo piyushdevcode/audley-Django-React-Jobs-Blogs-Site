@@ -57,31 +57,30 @@ export default class Login extends Component {
           }
         };
         console.log(axiosConfig);
-        axios.get(`${API_URL}/users/?search=${username}`,axiosConfig).then((resp) => {
-          localStorage.setItem("user_id",resp.data[0].id);
+        axios.get(`${API_URL}/users/?search=${username}`, axiosConfig).then((resp) => {
+          localStorage.setItem("user_id", resp.data[0].id);
 
         }).catch((err) => {
           console.log("error: ", err);
         })
         axios.get(`${API_URL}/jobsapplied?search=${username}`).then((resp) => {
-          console.log("JOb details-",resp.data);
+          console.log("JOb details-", resp.data);
           let jobsdata = resp.data;
           let applied_jobs = [];
-          console.log("trimmed: ",jobsdata.slice(),typeof(jobsdata.data))
-          if (jobsdata.length){
-          for (let i = 0 ; i < jobsdata.length; i++ ){
-            let details = jobsdata[i];
+          if (jobsdata.length) {
+            for (let i = 0; i < jobsdata.length; i++) {
+              let details = jobsdata[i];
               applied_jobs.push(parseInt(details.job))
             }
           }
-          console.log("Jobs Appl=",applied_jobs)
-    
-          localStorage.setItem("jobs_id",JSON.stringify(applied_jobs));
-    
+          console.log("Jobs Appl=", applied_jobs)
+
+          localStorage.setItem("jobs_id", JSON.stringify(applied_jobs));
+
         }).catch((err) => {
           console.log("error: ", err);
         })
-        
+
         document.forms["loginReg"].reset();
         this.handleResponse();
       };

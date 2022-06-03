@@ -13,12 +13,11 @@ class JobSerializer(serializers.ModelSerializer):
 
 
 class JobsAppliedSerializer(serializers.ModelSerializer):
-
+    job_name = serializers.SerializerMethodField('get_job_name')
+    status_r = serializers.CharField(source='get_status_display',read_only=True)
     class Meta:
         model = JobsApplied
         fields = "__all__"
-        # depth = 1
-        # extra_kwargs = {
-        #     'url': {'view_name': 'jobs-applied-detail'},
-        # }
-    
+
+    def get_job_name(self,obj):
+        return obj.job.title

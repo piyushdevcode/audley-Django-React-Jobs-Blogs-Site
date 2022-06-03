@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, CardHeader, CardBody, CardFooter, CardTitle, CardText, Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardFooter, CardTitle, CardText } from 'reactstrap'
 import "./Job.css";
 import axios from "axios";
 import { API_URL } from "./constants";
@@ -14,7 +14,6 @@ class JobIndex extends Component {
             username: "",
             isAuthenticated: false,
         };
-
     }
     componentDidMount() {
         let data;
@@ -31,26 +30,25 @@ class JobIndex extends Component {
                     isAuthenticated: uname == null ? false : true,
                 });
                 let initial = false;
-                console.log("state->",this.state)
-                for (let i = 0 ;i < data.length; i++)
-        {
-            this.setState({
-                showApplyModal: [...this.state.showApplyModal,initial]})
-           
-        }
-        console.log(this.state.showApplyModal)
+                for (let i = 0; i < data.length; i++) {
+                    this.setState({
+                        showApplyModal: [...this.state.showApplyModal, initial]
+                    })
+
+                }
+                console.log(this.state.showApplyModal)
             })
             .catch((err) => {
                 console.log(API_URL, "Failed to retrieve", err.response);
             });
-        
+
         console.log("AuthState-", this.state.isAuthenticated, "---", this.state.username);
     }
     // if job id matches with user then change apply now to applied
     render() {
         return (
             <div className="jobs-group">
-                {this.state.details.map((details,index) => (
+                {this.state.details.map((details, index) => (
                     <div key={details.id}>
                         {/* {handleModals} */}
                         <Card className="job-card bg-dark">
@@ -64,8 +62,8 @@ class JobIndex extends Component {
                                 <CardText>
                                     <div>{parse(details.description.replace(/<[^>]*>/g, '').slice(0, this.state.maxlength))}</div>
                                 </CardText>
-                                <JobModal buttonLabel={`Apply for ${details.title}`} details={details}/>
-                               
+                                <JobModal buttonLabel={`Apply for ${details.title}`} details={details} />
+
                             </CardBody>
                             <div className="tags">
                                 {details.tags.map((tag) => (

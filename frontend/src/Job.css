@@ -44,3 +44,24 @@ a.job-tags {
 .job-card .card-header{
     box-shadow: -1px -1px 10px 0px #ff00ff;
 }
+
+.my-jobs .list-group-item{
+    display: flex;
+    justify-content: space-between;
+}
+
+.my-jobs{
+    margin: 1em 15em;
+}
+
+.my-jobs .applied-jobs{
+    background: #00000091;
+    color: white;
+    font-weight: bold;
+}
+.my-jobs .Accepted{
+   background-color:  rgb(25, 135, 84) !important
+}
+.my-jobs .Rejected{
+    background-color: rgb(220, 53, 69) !important
+}

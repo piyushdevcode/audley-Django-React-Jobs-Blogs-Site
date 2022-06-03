@@ -4,7 +4,6 @@ from taggit.managers import TaggableManager
 from users.models import User
 from django_countries.fields import CountryField
 from ckeditor.fields import RichTextField
-# Create your models here.
 JOB_TYPE = (
     ("Full Time",'Full Time'),
     ('Part Time','Part Time'),
@@ -62,7 +61,7 @@ STATUS_CHOICES =(
 class JobsApplied(models.Model):
     job = models.ForeignKey(Job,related_name='jobs_applied',on_delete=models.CASCADE)
     user = models.ForeignKey(User,related_name='user_applicant',on_delete=models.CASCADE)
-    status = models.CharField(choices=STATUS_CHOICES,default=1,max_length=20)
+    status = models.CharField(choices=STATUS_CHOICES,default=1,max_length=20,blank=True)
     date_apply = models.DateTimeField(default=timezone.now)
     class Meta:
         ordering = ["id"]

@@ -11,7 +11,7 @@ class JobList(generics.ListAPIView):
     queryset = Job.objects.all()
     serializer_class = serializers.JobSerializer
     filter_backends = [filters.SearchFilter]
-    search_fields =['title','category']
+    search_fields =['title','category','tags__name']
 
 class JobDetail(generics.RetrieveAPIView):
     queryset = Job.objects.all()

@@ -21,34 +21,34 @@ export default class CreatePost extends Component {
       // 'syntax': true,
       'toolbar': [
         [{ 'font': [] }, { 'size': [] }],
-        [ 'bold', 'italic', 'underline', 'strike' ],
+        ['bold', 'italic', 'underline', 'strike'],
         [{ 'color': [] }, { 'background': [] }],
         [{ 'script': 'super' }, { 'script': 'sub' }],
-        [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block' ],
-        [{ 'list': 'ordered' }, { 'list': 'bullet'}, { 'indent': '-1' }, { 'indent': '+1' }],
-        [ 'direction', { 'align': [] }],
-        [ 'link', 'image', 'video', 'formula' ],
-        [ 'clean' ]
-  ],
-  imageResize: {
-    parchment: Quill.import('parchment'),
- }
-}
+        [{ 'header': '1' }, { 'header': '2' }, 'blockquote', 'code-block'],
+        [{ 'list': 'ordered' }, { 'list': 'bullet' }, { 'indent': '-1' }, { 'indent': '+1' }],
+        ['direction', { 'align': [] }],
+        ['link', 'image', 'video', 'formula'],
+        ['clean']
+      ],
+      imageResize: {
+        parchment: Quill.import('parchment'),
+      }
+    }
 
-    this.rteChange = this.rteChange.bind(this); 
-    
+    this.rteChange = this.rteChange.bind(this);
+
   }
-  componentDidMount(){
+  componentDidMount() {
     document.body.classList.add('overflow-hidden');
   }
   rteChange = (content, delta, source, editor) => {
     let req = editor.getHTML();
     this.setState(
       {
-        content : req,
+        content: req,
       }
     );
-    console.log(editor.getHTML() + typeof(req)); // rich text
+    console.log(editor.getHTML() + typeof (req)); // rich text
   }
   handleSubmit = (event) => {
     event.preventDefault();
@@ -92,14 +92,11 @@ export default class CreatePost extends Component {
                     onChange={this.handleChange} placeholder="Title" required />
                 </div>
                 <br></br>
-                {/* <div className="txt_field">
-                <textarea name="content" rows="8" placeholder="Content" onChange={this.handleChange} required></textarea>
-                </div> */}
                 <div>
                   <ReactQuill theme="snow" modules={this.modules}
                     formats={this.formats} onChange={this.rteChange}
                     placeholder="Content goes here..."
-                    />
+                  />
                 </div>
                 <div className="txt_field">
                   <button type="submit">Submit</button>
@@ -112,7 +109,7 @@ export default class CreatePost extends Component {
       </>
     );
   }
-  componentWillUnmount(){
+  componentWillUnmount() {
     document.body.classList.remove('overflow-hidden');
   }
 }

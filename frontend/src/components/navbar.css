@@ -1,59 +1,65 @@
 .navbar a {
-    text-decoration: none;
-    color: whitesmoke;
-  }
-  .navbar {
-    color: whitesmoke;
-    display: flex;
-    z-index: 999;
-    align-items: baseline;
-    padding: 0 10px;
-    font-size: calc(0.8em + .5vh);
-    /* box-shadow: inset 0px -5px 12px 3px #108cf9; */
-  }
-  
-  .navbar_title {
-    margin-right: auto;
-    font-size: 150%;
-    padding: 12px 12px;
-  }
-  
-  .navbar_item {
-    padding: 16px 16px;
-    cursor: pointer;
-    vertical-align: middle;
-  }
-  a:hover,.navbar *:hover {
-    color: #17ee9d;
-    transition: 350ms ease-in-out;
-    cursor: pointer;
-    opacity: 1;
-    font-weight: normal;
-  }
-  .followbtn {
-    position: relative;
-  }
-  .follow_handles {
-    transition: 0.5s ease-in-out;
-    opacity: 0;
-    margin: 0.25em 0 0 -1.75em;
-    font-size: 0.85em;
-    border-radius: 0.5rem;
-    visibility: hidden;
-    box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    background-color: #8a2be296;
-    z-index: 9;
-  }
-  .follow_item {
-    display: inline-flex;
-    gap: 0.25em;
-    align-content: center;
-    align-items: center;
-    padding: 0.75em 0.4em;
-  }
-  .followbtn:hover .follow_handles {
-    visibility: visible;
-    opacity: 1;
-  }
-  
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.navbar {
+  color: whitesmoke;
+  display: flex;
+  z-index: 999;
+  align-items: baseline;
+  padding: 0 10px;
+  font-size: calc(0.8em + .5vh);
+  /* box-shadow: inset 0px -5px 12px 3px #108cf9; */
+}
+
+.navbar_title {
+  margin-right: auto;
+  font-size: 150%;
+  padding: 12px 12px;
+}
+
+.navbar_item {
+  padding: 16px 16px;
+  cursor: pointer;
+  vertical-align: middle;
+}
+
+a:hover,
+.navbar *:hover {
+  color: #17ee9d;
+  transition: 350ms ease-in-out;
+  cursor: pointer;
+  opacity: 1;
+  font-weight: normal;
+}
+
+.followbtn {
+  position: relative;
+}
+
+.follow_handles {
+  transition: 0.5s ease-in-out;
+  opacity: 0;
+  margin: 0.25em 0 0 -1.75em;
+  font-size: 0.85em;
+  border-radius: 0.5rem;
+  visibility: hidden;
+  box-shadow: 0px 1px 10px 5px rgba(0, 0, 0, 0.5);
+  position: absolute;
+  background-color: #8a2be296;
+  z-index: 9;
+}
+
+.follow_item {
+  display: inline-flex;
+  gap: 0.25em;
+  align-content: center;
+  align-items: center;
+  padding: 0.75em 0.4em;
+}
+
+.followbtn:hover .follow_handles {
+  visibility: visible;
+  opacity: 1;
+}

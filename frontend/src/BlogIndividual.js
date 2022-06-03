@@ -11,25 +11,23 @@ const BlogIndiv = () => {
 
   // ComponentDidMount
   useEffect(() => {
-    const fetchBlogData = () =>{
-    axios
-      .get(`${API_URL}/posts/${id}/`)
-      .then((res) => {
-        res.data.created_on = res.data.created_on.slice(0,10);
-        setData(res.data);
-        console.log("success",res.data);
-      })
-      .catch((err) => {
-        console.log("Failed to retrieve", err.response);
-      });
+    const fetchBlogData = () => {
+      axios
+        .get(`${API_URL}/posts/${id}/`)
+        .then((res) => {
+          res.data.created_on = res.data.created_on.slice(0, 10);
+          setData(res.data);
+          console.log("success", res.data);
+        })
+        .catch((err) => {
+          console.log("Failed to retrieve", err.response);
+        });
     }
     fetchBlogData();
   }, []);
   const bg_url = "https://picsum.photos/1000/?random=";
-
-  // console.log(parse('<b>Hello</b'))
   return (
-    
+
     <main className="blog-main">
       <div className="blog-sth">
         <div className="blog-details">
@@ -38,13 +36,13 @@ const BlogIndiv = () => {
           <div className="blog-date">Posted on: {data.created_on}</div>
         </div>
         <div className="blog-image">
-          <img src={`${bg_url}${id}`} alt="postImage"/>
+          <img src={`${bg_url}${id}`} alt="postImage" />
         </div>
         <div className="blog-content">
           <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
           <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
           <p>{parse(`${data.content}`)}{parse(`${data.content}`)}</p>
-          
+
           <div className="fake-hr" />
         </div>
       </div>
