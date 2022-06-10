@@ -43,6 +43,8 @@ a.job-tags {
 }
 .job-card .card-header{
     box-shadow: -1px -1px 10px 0px #ff00ff;
+    font-weight: bold;
+    letter-spacing: 2px;
 }
 
 .my-jobs .list-group-item{
@@ -64,4 +66,36 @@ a.job-tags {
 }
 .my-jobs .Rejected{
     background-color: rgb(220, 53, 69) !important
+}
+.search-box{
+padding: 1em;
+text-align: center;
+
+}
+.job-search {
+    width: 30%;
+    height: 3.2em;
+    border-radius: .5rem;
+    background: #000000a6;
+    transition: width .5s ease-in-out;
+}
+
+input.job-search::placeholder {
+    color: rgba(255, 255, 255, 0.592);
+    padding: 1em;
+}
+input.job-search:focus {
+    width: 80%;
+    color: white;
+    padding: 1em;
+    font-size:larger;
+    outline: none;
+    box-shadow: inset -1px -2px 6px #8114ff, inset 1px 2px 5px 0px #ce14cc;
+}
+
+.search-ico {
+    font-size: xx-large !important;
+}
+input.job-search:focus::placeholder{
+    color: transparent;
 }

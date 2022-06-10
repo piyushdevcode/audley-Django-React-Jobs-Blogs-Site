@@ -46,6 +46,14 @@ urlpatterns = format_suffix_patterns([
     path('api/feedback/<int:pk>/',
          views.FeedbackDetail.as_view(),
          name='feedback-detail'),
+
+     #------------------COMMENTS--------------
+     path('api/comments/<int:pk>/',
+     views.CommentDetail.as_view(),
+     name='comment-detail'),
+     path('api/comments',
+     views.CommentList.as_view(),
+     name='comment-list')
 ])
 
 # urlpatterns = format_suffix_patterns(urlpatterns)

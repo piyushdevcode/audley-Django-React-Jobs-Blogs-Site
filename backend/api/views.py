@@ -7,7 +7,7 @@ from rest_framework.response import Response
 from api import serializers
 # from django.contrib.auth.models import User
 from users.models import User
-from .models import Feedback, Post
+from .models import Feedback, Post, Comment
 from rest_framework import permissions, generics
 from api.permissions import IsOwnerOrReadOnly
 from rest_framework.decorators import api_view, permission_classes
@@ -95,10 +95,19 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 class FeedbackList(generics.ListCreateAPIView):
     queryset = Feedback.objects.all()
     serializer_class = serializers.FeedbackSerilaizer
-    permission_classes = [permissions.IsAdminUser]
+    # permission_classes = [permissions.IsAdminUser]
 
 
 class FeedbackDetail(generics.RetrieveAPIView):
     queryset = Feedback.objects.all()
     serializer_class = serializers.FeedbackSerilaizer
     permission_classes = [permissions.IsAdminUser]
+
+class CommentDetail(generics.RetrieveAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = serializers.CommentSerializer
+
+class CommentList(generics.ListCreateAPIView):
+    queryset = Comment.objects.all()
+    serializer_class = serializers.CommentSerializer
+    

@@ -2,14 +2,21 @@ from django.http import response
 from rest_framework import serializers
 # from django.contrib.auth.models import User
 from users.models import User
-from api.models import Post , Feedback
+from api.models import Post , Feedback, Comment
 
 
 #----------- For serializing the Posts ------
 
+class CommentSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = Comment
+        fields = ["name",'body','date_created','post']
+
 class PostSerializer(serializers.HyperlinkedModelSerializer):
     author = serializers.ReadOnlyField(source='author.username')
     status = serializers.SerializerMethodField()
+    comments = CommentSerializer(many=True,read_only=True)
 
     def get_status(self,obj):
         if obj.status == True:
@@ -19,7 +26,7 @@ class PostSerializer(serializers.HyperlinkedModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id','author','title','url','slug','created_on','content','status']
+        fields = ['id','author','title','url','slug','created_on','content','status','comments']
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     posts = serializers.HyperlinkedRelatedField(many=True, read_only=True,view_name='post-detail')
@@ -47,3 +54,4 @@ class FeedbackSerilaizer(serializers.ModelSerializer):
     class Meta:
         model = Feedback
         fields = ['name','phoneno','email','message','received_on']
+

@@ -45,7 +45,6 @@ export default class Login extends Component {
       const payload = { username, password };
 
       const onSuccess = ({ data }) => {
-        let user_id = null;
         this.setState({ isAuthorized: true, showErr: false });
         console.log(`Token : ${data.token}`);
         localStorage.setItem("token", data.token);

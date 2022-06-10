@@ -40,7 +40,6 @@ class ModalExample extends React.Component {
     });
   }
   toggleTooltip = () => {
-    console.log("called", this.state)
     this.setState({
       showTooltip: !this.state.showTooltip,
     })

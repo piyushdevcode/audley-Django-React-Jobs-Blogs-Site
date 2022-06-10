@@ -58,7 +58,6 @@ class ApplicantProfile extends Component {
       //
       axios.get(`${API_URL}/jobsapplied?search=${uname}`).then((resp) => {
         // console.log("JOb details-",resp.data);
-        let jobsdata = resp.data;
         this.setState({
           job_details: resp.data,
           hasAppliedJobs: true,

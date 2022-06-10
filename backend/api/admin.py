@@ -22,3 +22,4 @@ class FeedbackAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Feedback,FeedbackAdmin)
+admin.site.register(Comment)
