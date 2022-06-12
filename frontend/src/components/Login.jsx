@@ -27,7 +27,7 @@ export default class Login extends Component {
       password: "",
       email: "",
       isAuthorized: false,
-      errors: {},
+      errors: null ,
       showLogin: true,
       showErr: false,
       showResp: false,
@@ -86,25 +86,31 @@ export default class Login extends Component {
 
       const onFailure = (error) => {
         console.log(error && error.response);
-        this.setState({ errors: error.response.data, showErr: true });
+        this.setState({ errors: Object.values(error.response.data), showErr: true });
+        console.log("errors: ",error.response.data);
       };
 
       axios
         .post(`${API_URL}/user/login`, payload)
         .then(onSuccess)
         .catch(onFailure);
-    } else {
+    } 
+    // FOR REGISTERING USER
+    else {
       const payload = { username, email, password };
       console.log("reg-payload", payload);
       axios
         .post(`${API_URL}/user/register/`, payload)
         .then((res) => {
           console.log(res);
+          this.setState({showErr: false});
           document.forms["loginReg"].reset();
           this.handleResponse();
         })
         .catch((err) => {
-          console.log(err);
+          this.setState({ errors: Object.values(err.response.data), showErr: true });
+          console.log("Failed to register ",err.response.data)
+          console.log("state errors: ",this.state.errors);
         });
     }
   };
@@ -126,12 +132,14 @@ export default class Login extends Component {
         document.getElementById("modal-btn-cl").click();
         window.location.reload();
       }
+      else {document.getElementById('login-reg-btn').click()}
     }, 4000);
   };
   handleRegister = () => {
     document.forms["loginReg"].reset();
     this.setState({
       showLogin: !this.state.showLogin,
+      showErr: false
     });
   };
   render() {
@@ -181,10 +189,10 @@ export default class Login extends Component {
                 placeholder="Enter Password"
                 onChange={this.handleOnChange}
                 autoComplete="on"
-                required
+                required 
               />
               {this.state.showErr && (
-                <div className="errTooltip">Username/Password Invalid</div>
+                <div className="errTooltip">{this.state.errors[0]}</div>
               )}
               <input
                 type="submit"
@@ -192,7 +200,7 @@ export default class Login extends Component {
               />
               {/* <a href="#">Lost your password?</a>
             <br /> */}
-              <a href="#" onClick={this.handleRegister}>
+              <a href="#"id="login-reg-btn" onClick={this.handleRegister}>
                 {" "}
                 {this.state.showLogin ? "Don't have an account?" : "Login"}{" "}
               </a>

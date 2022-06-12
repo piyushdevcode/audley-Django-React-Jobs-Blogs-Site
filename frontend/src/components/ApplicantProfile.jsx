@@ -109,6 +109,7 @@ class ApplicantProfile extends Component {
     form_data.append('gender', this.state.gender)
     form_data.append('country', this.state.country)
     form_data.append('location', this.state.location)
+    
     const token = localStorage.getItem('token');
     let headers = {
       headers: {
@@ -118,7 +119,9 @@ class ApplicantProfile extends Component {
     }
 
     let url = 'http://localhost:8000/api/applicants/';
+
     if (this.state.hasProfile) {
+
       axios.put(`${url}${uid}`, form_data, headers).then((resp) => {
         console.log(resp.data);
         this.setState({

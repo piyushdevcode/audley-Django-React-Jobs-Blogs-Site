@@ -99,3 +99,7 @@ input.job-search:focus {
 input.job-search:focus::placeholder{
     color: transparent;
 }
+
+.center-spinner{
+    margin: 2em auto 2em 50%;
+}

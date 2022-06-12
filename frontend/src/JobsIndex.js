@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, CardHeader, CardBody, CardFooter, CardTitle, CardText } from 'reactstrap'
+import { Card, CardHeader, CardBody, CardFooter, CardTitle, CardText,Spinner } from 'reactstrap'
 import "./Job.css";
 import axios from "axios";
 import { API_URL } from "./constants";
@@ -14,6 +14,7 @@ class JobIndex extends Component {
             details: [],
             username: "",
             isAuthenticated: false,
+            isLoading : true,
         };
     }
     componentDidMount() {
@@ -29,6 +30,7 @@ class JobIndex extends Component {
                     details: data,
                     username: uname,
                     isAuthenticated: uname == null ? false : true,
+                    isLoading : false,
                 });
             })
             .catch((err) => {
@@ -74,7 +76,7 @@ class JobIndex extends Component {
                 <SearchIcon className="search-ico"/>
                 <input type="text" name="searchbar" className="job-search"  placeholder="Looking for ? "onChange={this.handleSearch} autofocus/>
                 </div>
-                <div className="jobs-group">
+                {!this.state.isLoading ? (<div className="jobs-group">
                     {this.state.details.map((details, index) => (
                         <div key={details.id}>
                             {/* {handleModals} */}
@@ -104,7 +106,7 @@ class JobIndex extends Component {
                             </Card>
                         </div>))}
 
-                </div>
+                </div>): (<Spinner className="center-spinner"/>)}
             </>
         )
 
