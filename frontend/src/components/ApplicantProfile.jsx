@@ -109,7 +109,7 @@ class ApplicantProfile extends Component {
     form_data.append('gender', this.state.gender)
     form_data.append('country', this.state.country)
     form_data.append('location', this.state.location)
-    
+
     const token = localStorage.getItem('token');
     let headers = {
       headers: {
@@ -192,7 +192,7 @@ class ApplicantProfile extends Component {
               <ListGroupItem className='applied-jobs'>My Jobs</ListGroupItem>
               {this.state.job_details.map((details, i) => (
                 <ListGroup>
-                  <ListGroupItem className="justify-content-between">  <a href="/jobs">{details.job_name}</a> <Badge pill className={details.status_r}>{details.status_r}</Badge></ListGroupItem>
+                  <ListGroupItem className="justify-content-between">  <a href="/jobs">{details.job_name}</a> <Badge pill className={`${details.status_r} lt-spacing`}>{details.status_r}</Badge></ListGroupItem>
                 </ListGroup>
               ))}
             </div>

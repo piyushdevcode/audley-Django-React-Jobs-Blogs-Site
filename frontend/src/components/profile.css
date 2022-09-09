@@ -25,3 +25,7 @@ form.profile-form select, form.profile-form input {
     outline: 5px solid #00000061;
     background-color: white;
 }
+
+.lt-spacing{
+    letter-spacing: 1.5px;
+}
