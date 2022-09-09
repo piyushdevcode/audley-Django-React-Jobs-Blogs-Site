@@ -39,7 +39,14 @@ Job Main
 
 Job Details
 
-<img  alt="Job Details" src="/screenshots/job_details.png" width = "75%" align="left">
+<img  alt="Job Details" src="/screenshots/job_details.png" width = "75%">
+<hr>
+ER Diagram
+<img style="display:block" alt="ER Diagram" src="/screenshots/ER_diag.jpg" width = "100%">
+
+API ROOT
+![APIROOT](/screenshots/api-root.png "Api Root")
+
 
 
 
